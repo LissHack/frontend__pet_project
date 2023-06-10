@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Storage = () => {
+const StoragePage = () => {
     return (
         <div>
             Storage
@@ -8,4 +8,4 @@ const Storage = () => {
     );
 };
 
-export default Storage;
+export default StoragePage;
