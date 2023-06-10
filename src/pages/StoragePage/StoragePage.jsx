@@ -1,9 +1,10 @@
 import React from 'react';
+import NavbarStorage from "../../components/UI/Navbar/NavbarStorage";
 
 const StoragePage = () => {
     return (
         <div>
-            Storage
+            <NavbarStorage/>
         </div>
     );
 };
