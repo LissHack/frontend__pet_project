@@ -2,6 +2,7 @@ import React, {useContext} from 'react';
 import {Navigate, Route, Routes} from "react-router-dom";
 import {adminRouters, storageRouters, userRouters} from "../routes";
 import {LOGIN_ROUTE} from "../utils/consts";
+import {Context} from "../index";
 
 const AppRouter = () => {
     const {user, admin, storage} = useContext(Context)
