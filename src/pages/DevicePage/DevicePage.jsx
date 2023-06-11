@@ -1,23 +1,22 @@
 import React from 'react';
-import {Col, Container, Row} from "react-bootstrap";
+import {Card, Col, Container, Row} from "react-bootstrap";
 import NavbarStorage from "../../components/UI/Navbar/NavbarStorage";
 import TypeBar from "../../components/TypeBar";
+import DeviceList from "../../components/DeviceList";
+import cl from './DevicePage.module.css'
 
 const DevicePage = () => {
     return (
         <div>
             <NavbarStorage/>
-            <Container>
-                <Row>
-                    <Col md={3}>
-                        <TypeBar/>
-                    </Col>
-                    <Col md={3}>
-
-                    </Col>
-
-                </Row>
-            </Container>
+            <div className={cl.container__device_page}>
+                <Card>
+                    <TypeBar/>
+                </Card>
+                <Card>
+                    <DeviceList/>
+                </Card>
+            </div>
         </div>
     );
 };

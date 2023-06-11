@@ -1,0 +1,24 @@
+.content__device_list {
+    display: inline-grid;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    padding-right: 20px;
+}
+
+.card_name {
+    padding-bottom: 8px;
+    text-align: center;
+}
+
+.card__device_list {
+    width: 150px;
+    cursor: pointer;
+    border: #4f4f4f;
+}
+
+.image__device_list {
+    width: 150px;
+    height: 150px;
+}
+

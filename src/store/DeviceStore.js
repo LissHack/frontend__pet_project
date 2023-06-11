@@ -20,12 +20,12 @@ export default class DeviceStore {
             {id: 4, name: 'Asus'},
         ]
         this._devices = [
-            {id: 1, name: '25BK550Y', SN: '910NTGY2X975', state: 'Б/У'},
-            {id: 2, name: 'UX310U', SN: 'J5N0CV06W555209', state: 'неисправное'},
-            {id: 3, name: 'ZBook G5', SN: '5CG9290M8M', state: 'новое'},
-        {id: 1, name: '25BK550Y', SN: '910NTGY2X975', state: 'Б/У'},
-            {id: 2, name: 'UX310U', SN: 'J5N0CV06W555209', state: 'неисправное'},
-            {id: 3, name: 'ZBook G5', SN: '5CG9290M8M', state: 'новое'},
+            {id: 1, name: '25BK550Y', SN: '910NTGY2X975', state_at: 'Б/У'},
+            {id: 2, name: 'UX310U', SN: 'J5N0CV06W555209', state_at: 'неисправное'},
+            {id: 3, name: 'ZBook G5', SN: '5CG9290M8M', state_at: 'новое'},
+            {id: 1, name: '25BK550Y', SN: '910NTGY2X975', state_at: 'Б/У'},
+            {id: 2, name: 'UX310U', SN: 'J5N0CV06W555209', state_at: 'неисправное'},
+            {id: 3, name: 'ZBook G5', SN: '5CG9290M8M', state_at: 'новое'},
 
 
         ]
