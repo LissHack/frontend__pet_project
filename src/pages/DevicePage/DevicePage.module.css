@@ -1,5 +1,18 @@
 .container__device_page {
     display: flex;
-    justify-content: center;
-    margin: 15px 30px;
+    margin: 20px 20px;
+}
+
+.card__img {
+    width: 230px;
+    height: 230px;
+
+}
+
+.card__desc {
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+
 }
