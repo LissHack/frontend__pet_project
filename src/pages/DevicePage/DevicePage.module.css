@@ -1,5 +1,5 @@
 .container__device_page {
     display: flex;
     justify-content: center;
-    margin-top: 30px;
+    margin: 15px 30px;
 }

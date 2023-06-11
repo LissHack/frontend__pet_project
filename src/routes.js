@@ -36,9 +36,9 @@ export const storageRouters = [
         Component: StoragePage
     },
     {
-        path: DEVICE_ROUTE,
+        // path: DEVICE_ROUTE,
 
-        // path: DEVICE_ROUTE + '/:id',
+        path: DEVICE_ROUTE + '/:id',
         Component: DevicePage
     },
     {

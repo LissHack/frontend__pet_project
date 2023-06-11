@@ -10,9 +10,7 @@ const DevicePage = () => {
         <div>
             <NavbarStorage/>
             <div className={cl.container__device_page}>
-                <Card>
-                    <TypeBar/>
-                </Card>
+
                 <Card>
                     <DeviceList/>
                 </Card>

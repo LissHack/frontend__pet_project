@@ -1,14 +1,20 @@
 import React from 'react';
-
 import {Card, Col, Image} from "react-bootstrap";
 import cl from "./DeviceItem.module.css";
+import {useNavigate} from "react-router-dom";
+import {DEVICE_ROUTE} from "../utils/consts";
 
 const DeviceItem = ({device}) => {
+    const navigate = useNavigate()
+
     return (
-        <Col className={cl.content__device_list}>
+        <Col
+            className={cl.content__device_list}
+            onClick={() => navigate(DEVICE_ROUTE + '/' + device.id)}
+        >
             <Card className={cl.card__device_list}>
                 <div className={cl.card_name}>
-                    <div >
+                    <div>
                         {device.name}
                     </div>
                     <Image
