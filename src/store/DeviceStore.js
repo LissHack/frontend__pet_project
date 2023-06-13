@@ -7,9 +7,8 @@ export default class DeviceStore {
             {id: 2, name: 'Клавиатура'},
             {id: 3, name: 'Принтер'},
             {id: 4, name: 'Монитор'},
-
-            {id: 5, name: 'Принтер'},
-            {id: 6, name: 'Монитор'},
+            {id: 5, name: 'Наушники'},
+            {id: 6, name: 'Ноутбук'},
 
 
         ]

@@ -1,12 +1,13 @@
 import React from 'react';
 import Modal from "react-bootstrap/Modal";
-import MyButton from "../MyButton/MyButton";
-import cl from './MyModal.module.css'
-import {Card} from "react-bootstrap";
-import MyInput from "../input/MyInput";
-import Form from "react-bootstrap/Form";
 
-const CreatePosition = ({show, onHide}) => {
+import cl from '../MyModal.module.css'
+import {Card} from "react-bootstrap";
+import MyInput from "../../input/MyInput";
+import Form from "react-bootstrap/Form";
+import MyButton from "../../MyButton/MyButton";
+
+const CreateDepartment = ({show, onHide}) => {
     return (
         <Modal className={cl.container__modal}
                show={show}
@@ -16,9 +17,9 @@ const CreatePosition = ({show, onHide}) => {
         >
             <Form className={cl.modal}>
                 <Card className={cl.content__modal}>
-                    <h3>Добавить должность</h3>
+                    <h3>Добавить отдел</h3>
                     <MyInput
-                        placeholder={'Введите название должности'}
+                        placeholder={'Введите название отдела'}
                     />
                     <div className={cl.modal__btn}>
                         <MyButton onClick={onHide}>Закрыть</MyButton>
@@ -31,4 +32,4 @@ const CreatePosition = ({show, onHide}) => {
     );
 };
 
-export default CreatePosition;
+export default CreateDepartment;

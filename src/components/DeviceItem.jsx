@@ -1,5 +1,5 @@
 import React from 'react';
-import {Card, Col, Image} from "react-bootstrap";
+import {Card, Image} from "react-bootstrap";
 import cl from "./DeviceItem.module.css";
 import {useNavigate} from "react-router-dom";
 import {DEVICE_ROUTE} from "../utils/consts";
@@ -8,7 +8,7 @@ const DeviceItem = ({device}) => {
     const navigate = useNavigate()
 
     return (
-        <Col
+        <div
             className={cl.content__device_list}
             onClick={() => navigate(DEVICE_ROUTE + '/' + device.id)}
         >
@@ -24,7 +24,7 @@ const DeviceItem = ({device}) => {
                     <div>{device.state_at}</div>
                 </div>
             </Card>
-        </Col>
+        </div>
 
     );
 };

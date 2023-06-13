@@ -2,9 +2,9 @@ import React, {useState} from 'react';
 import NavbarAdmin from "../../components/UI/Navbar/NavbarAdmin";
 import MyButton from "../../components/UI/MyButton/MyButton";
 import cl from './Admin.module.css'
-import CreateDepartment from "../../components/UI/MyModal/CreateDepartment";
-import CreatePosition from "../../components/UI/MyModal/CreatePosition";
-import CreateUser from "../../components/UI/MyModal/CreateUser";
+import CreateDepartment from "../../components/UI/MyModal/MyModalAdmin/CreateDepartment";
+import CreatePosition from "../../components/UI/MyModal/MyModalAdmin/CreatePosition";
+import CreateUser from "../../components/UI/MyModal/MyModalAdmin/CreateUser";
 
 const Admin = () => {
     const [depVisible, setDepVisible] = useState(false)
