@@ -48,26 +48,27 @@ const CreateDevice = ({show, onHide}) => {
                     <MyInput
                         placeholder="Введите название устройства"/>
                     <MyInput
-                        placeholder="Введите стоимость устройства"/>
-                    <MyInput
                         type="file"/>
                     <hr/>
                     <MyButton onClick={addInfo}>Добавить новое свойство</MyButton>
                     {info.map(i =>
                         <Row className="mt-2" key={i.number}>
+
                             <MyInput placeholder="Введите название свойства"/>
+
                             <MyInput placeholder="Введите описание свойства"/>
-                            <div>
-                                <MyButton onClick={() => removeInfo(i.number)}>
-                                    Удалить
-                                </MyButton>
-                            </div>
+
+                            <MyButton onClick={() => removeInfo(i.number)}>
+                                Удалить
+                            </MyButton>
+
                         </Row>
                     )}
-                    <div className={cl.modal__btn}>
+                    <Card>
                         <MyButton variant="outline-danger" onClick={onHide}>Закрыть</MyButton>
                         <MyButton variant="outline-success" onClick={onHide}>Добавить</MyButton>
-                    </div>
+
+                    </Card>
 
                 </Card>
             </Form>

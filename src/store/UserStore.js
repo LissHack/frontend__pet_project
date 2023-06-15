@@ -3,17 +3,42 @@ import {makeAutoObservable} from "mobx";
 export default class UserStore {
     constructor() {
         this._users = [
-            {id: 1, name: 'Иван', lastname: 'Иванов', secondname: 'Иванович', email: 'ivanov@email.com', password: ''},
-            {id: 2, name: 'Петр', lastname: 'Петров', secondname: 'Петрович', email: 'petrov@email.com', password: ''},
+            {
+                id: 1,
+                name: 'Иван',
+                lastname: 'Иванов',
+                secondname: 'Иванович',
+                email: 'ivanov@email.com',
+                password: 'password',
+                tabel: '123'
+            },
+            {
+                id: 2,
+                name: 'Петр',
+                lastname: 'Петров',
+                secondname: 'Петрович',
+                email: 'petrov@email.com',
+                password: 'password1',
+                tabel: '456'
+            },
             {
                 id: 3,
                 name: 'Клим',
                 lastname: 'Пупкин',
                 secondname: 'Александрович',
                 email: 'pupkin@email.com',
-                password: ''
+                password: 'password2',
+                tabel: '789'
             },
-            {id: 4, name: 'Алексей', lastname: 'Сидоров', secondname: 'Сергеевич', email: 'sidorov@email.com', password: ''},
+            {
+                id: 4,
+                name: 'Алексей',
+                lastname: 'Сидоров',
+                secondname: 'Сергеевич',
+                email: 'sidorov@email.com',
+                password: 'password3',
+                tabel: '159'
+            },
 
         ]
 
