@@ -2,7 +2,7 @@ import React from 'react';
 import {Image} from "react-bootstrap";
 import cl from "./DeviceItem.module.css";
 import {useNavigate} from "react-router-dom";
-import {DEVICE_ROUTE} from "../utils/consts";
+import {DEVICE_ROUTE} from "../../utils/consts";
 
 const DeviceItem = ({device}) => {
     const navigate = useNavigate()

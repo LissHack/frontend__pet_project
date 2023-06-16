@@ -1,6 +1,6 @@
 import React, {useContext, useMemo, useState} from 'react';
 import {observer} from "mobx-react-lite";
-import {Context} from "../index";
+import {Context} from "../../index";
 import cl from './TypeBar.module.css'
 import {Container} from "react-bootstrap";
 

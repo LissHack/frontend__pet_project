@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
-import MyButton from "./UI/MyButton/MyButton";
-import CreateType from "./UI/MyModal/MyModalStorage/CreateType";
-import CreateBrand from "./UI/MyModal/MyModalStorage/CreateBrands";
-import CreateDevice from "./UI/MyModal/MyModalStorage/CreateDevice";
+import MyButton from "../UI/MyButton/MyButton";
+import CreateType from "../UI/MyModal/MyModalStorage/CreateType";
+import CreateBrand from "../UI/MyModal/MyModalStorage/CreateBrands";
+import CreateDevice from "../UI/MyModal/MyModalStorage/CreateDevice";
 import {Container} from "react-bootstrap";
 
 
