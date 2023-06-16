@@ -1,0 +1,19 @@
+.container {
+    display: flex;
+    justify-content: flex-start;
+    align-content: space-around;
+    padding-top: 15px;
+}
+
+.content__brand_bar {
+    cursor: pointer;
+    margin-right: 3px;
+    padding: 10px;
+    border: 2px solid teal;
+    border-radius: 5px;
+}
+
+.content__brand_bar:hover {
+    color: white;
+    background-color: teal;
+}

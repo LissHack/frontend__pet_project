@@ -5,6 +5,7 @@ import cl from './Admin.module.css'
 import CreateDepartment from "../../components/UI/MyModal/MyModalAdmin/CreateDepartment";
 import CreatePosition from "../../components/UI/MyModal/MyModalAdmin/CreatePosition";
 import CreateUser from "../../components/UI/MyModal/MyModalAdmin/CreateUser";
+import {Container} from "react-bootstrap";
 
 const Admin = () => {
     const [depVisible, setDepVisible] = useState(false)
@@ -12,7 +13,7 @@ const Admin = () => {
     const [userVisible, setUserVisible] = useState(false)
 
     return (
-        <div>
+        <Container>
             <NavbarAdmin/>
             <div className={cl.btn__admin}>
                 <MyButton
@@ -34,7 +35,7 @@ const Admin = () => {
             <CreateDepartment show={depVisible} onHide={() => setDepVisible(false)}/>
             <CreatePosition show={positionVisible} onHide={() => setPositionVisible(false)}/>
             <CreateUser show={userVisible} onHide={() => setUserVisible(false)}/>
-        </div>
+        </Container>
     );
 };
 

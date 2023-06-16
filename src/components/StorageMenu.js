@@ -3,6 +3,7 @@ import MyButton from "./UI/MyButton/MyButton";
 import CreateType from "./UI/MyModal/MyModalStorage/CreateType";
 import CreateBrand from "./UI/MyModal/MyModalStorage/CreateBrands";
 import CreateDevice from "./UI/MyModal/MyModalStorage/CreateDevice";
+import {Container} from "react-bootstrap";
 
 
 const StorageMenu = () => {
@@ -11,8 +12,7 @@ const StorageMenu = () => {
     const [deviceVisible, setDeviceVisible] = useState(false)
 
     return (
-        <div>
-            <div className='mt-4'>
+        <Container className="d-flex flex-column ms-5-5">
                 <MyButton
                     onClick={() => setTypeVisible(true)}
                 >
@@ -28,11 +28,11 @@ const StorageMenu = () => {
                 >
                     Добавить устройство
                 </MyButton>
-            </div>
+
             <CreateType show={typeVisible} onHide={() => setTypeVisible(false)}/>
             <CreateBrand show={brandVisible} onHide={() => setBrandVisible(false)}/>
             <CreateDevice show={deviceVisible} onHide={() => setDeviceVisible(false)}/>
-        </div>
+        </Container>
     );
 };
 

@@ -9,26 +9,32 @@ export default class DeviceStore {
             {id: 4, name: 'Монитор'},
             {id: 5, name: 'Наушники'},
             {id: 6, name: 'Ноутбук'},
-
-
         ]
+
+        this._conditions = [
+            {id: 1, name: 'Новый'},
+            {id: 2, name: 'Использованный'},
+            {id: 3, name: 'Брак'},
+        ]
+
         this._brands = [
             {id: 1, name: 'Samsung'},
             {id: 2, name: 'LG'},
             {id: 3, name: 'Lenovo'},
             {id: 4, name: 'Asus'},
         ]
+
         this._devices = [
-            {id: 1, name: '25BK550Y', SN: '910NTGY2X975', state_at: 'Б/У'},
-            {id: 2, name: 'UX310U', SN: 'J5N0CV06W555209', state_at: 'неисправное'},
-            {id: 3, name: 'ZBook G5', SN: '5CG9290M8M', state_at: 'новое'},
-            {id: 1, name: '25BK550Y', SN: '910NTGY2X975', state_at: 'Б/У'},
-            {id: 2, name: 'UX310U', SN: 'J5N0CV06W555209', state_at: 'неисправное'},
-            {id: 3, name: 'ZBook G5', SN: '5CG9290M8M', state_at: 'новое'},
-
-
+            {id: 1, name: '25BK550Y', SN: '910NTGY2X975', condition_id: 'Б/У'},
+            {id: 2, name: 'UX310U', SN: 'J5N0CV06W555209', condition_id: 'неисправное'},
+            {id: 3, name: 'ZBook G5', SN: '5CG9290M8M', condition_id: 'новое'},
+            {id: 1, name: '25BK550Y', SN: '910NTGY2X975', condition_id: 'Б/У'},
+            {id: 2, name: 'UX310U', SN: 'J5N0CV06W555209', condition_id: 'неисправное'},
+            {id: 3, name: 'ZBook G5', SN: '5CG9290M8M', condition_id: 'новое'},
         ]
+
         this._selectedType = {}
+        this._selectedBrand = {}
         makeAutoObservable(this)
     }
 
@@ -48,6 +54,14 @@ export default class DeviceStore {
         this._selectedType = type
     }
 
+    setSelectedBrand(brand) {
+        this._selectedBrand = brand
+    }
+
+    setConditions(conditions) {
+        this._conditions = conditions
+    }
+
     get types() {
         return this._types
     }
@@ -62,6 +76,14 @@ export default class DeviceStore {
 
     get selectedType() {
         return this._selectedType
+    }
+
+    get selectedBrand() {
+        return this._selectedBrand
+    }
+
+    get conditions() {
+        return this._conditions
     }
 
 }

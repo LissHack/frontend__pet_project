@@ -12,7 +12,7 @@ const TypeBar = observer(() => {
             {device.types.map(type =>
                 <card className={cl.card__type_bar}
                       key={type.id}
-                      active={type.id === device.selectedType.id}
+                      // active={type.id === device.selectedType.id}
                       onClick={() => device.setSelectedType(type)}
                 >
                     {type.name}

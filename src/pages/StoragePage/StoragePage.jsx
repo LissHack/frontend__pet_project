@@ -6,6 +6,7 @@ import TypeBar from "../../components/TypeBar";
 import DeviceList from "../../components/DeviceList";
 import StorageMenu from "../../components/StorageMenu";
 import Form from "react-bootstrap/Form";
+import BrandBar from "../../components/BrandBar";
 
 const StoragePage = () => {
     return (
@@ -17,6 +18,7 @@ const StoragePage = () => {
                     <TypeBar/>
                 </Card>
                 <Card>
+                    <BrandBar/>
                     <DeviceList/>
                 </Card>
             </Form>
