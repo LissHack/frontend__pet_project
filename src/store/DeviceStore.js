@@ -13,7 +13,7 @@ export default class DeviceStore {
 
         this._conditions = [
             {id: 1, name: 'Новый'},
-            {id: 2, name: 'Использованный'},
+            {id: 2, name: 'Б/У'},
             {id: 3, name: 'Брак'},
         ]
 
@@ -22,6 +22,8 @@ export default class DeviceStore {
             {id: 2, name: 'LG'},
             {id: 3, name: 'Lenovo'},
             {id: 4, name: 'Asus'},
+            {id: 5, name: 'Aser'},
+
         ]
 
         this._devices = [
@@ -35,6 +37,7 @@ export default class DeviceStore {
 
         this._selectedType = {}
         this._selectedBrand = {}
+        this._selectedCondition = {}
         makeAutoObservable(this)
     }
 
@@ -56,6 +59,10 @@ export default class DeviceStore {
 
     setSelectedBrand(brand) {
         this._selectedBrand = brand
+    }
+
+    setSelectedCondition(condition) {
+        this._selectedCondition = condition
     }
 
     setConditions(conditions) {
@@ -80,6 +87,10 @@ export default class DeviceStore {
 
     get selectedBrand() {
         return this._selectedBrand
+    }
+
+    get selectedCondition() {
+        return this._selectedCondition
     }
 
     get conditions() {

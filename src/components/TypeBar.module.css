@@ -3,11 +3,11 @@
     flex-direction: column;
     justify-content: center;
     width: 180px;
-    margin: 90px 30px;
+    margin: 40px 30px;
 }
 
 .card__type_bar {
-    padding: 11px 13px;
+    padding: 11px 11px;
     color: white;
     font-size: 14px;
     border: 2px solid white;
