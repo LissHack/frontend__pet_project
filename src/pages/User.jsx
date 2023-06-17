@@ -1,5 +1,5 @@
 import React from 'react';
-import NavbarUser from "../../components/UI/Navbar/NavbarUser";
+import NavbarUser from "../components/UI/Navbar/NavbarUser";
 
 const User = () => {
     return (

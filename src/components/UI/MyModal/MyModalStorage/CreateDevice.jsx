@@ -56,7 +56,7 @@ const CreateDevice = observer(({show, onHide}) => {
                 Добавить устройство
             </Modal.Title>
 
-            <Form className={cl.modal}>
+            <Form className={cl.modal} style={{padding: 40}}>
                 <Dropdown className={cl.modal__dropdown}>
                     <Dropdown.Toggle
                         className={cl.modal__dropdown_btn}>{device.selectedType.name || 'Выберите тип'}</Dropdown.Toggle>

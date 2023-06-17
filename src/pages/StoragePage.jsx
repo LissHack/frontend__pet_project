@@ -1,13 +1,13 @@
 import React from 'react';
-import NavbarStorage from "../../components/UI/Navbar/NavbarStorage";
-import cl from "../DevicePage/DevicePage.module.css";
+import NavbarStorage from "../components/UI/Navbar/NavbarStorage";
+import cl from "./DevicePage/DevicePage.module.css";
 import {Card, Container} from "react-bootstrap";
-import TypeBar from "../../components/Device/TypeBar";
-import DeviceList from "../../components/Device/DeviceList";
-import StorageMenu from "../../components/Device/StorageMenu";
+import TypeBar from "../components/DeviceComponent/TypeBar";
+import DeviceList from "../components/DeviceComponent/DeviceList";
+import StorageMenu from "../components/DeviceComponent/StorageMenu";
 import Form from "react-bootstrap/Form";
-import BrandBar from "../../components/Device/BrandBar";
-import ConditionBar from "../../components/Device/ConditionBar";
+import BrandBar from "../components/DeviceComponent/BrandBar";
+import ConditionBar from "../components/DeviceComponent/ConditionBar";
 
 const StoragePage = () => {
     return (

@@ -14,13 +14,12 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    color: #f1f1f1;
+    color: #3d3d3d;
     flex-direction: column;
     display: flex;
     background: white;
     justify-content: center;
     align-items: center;
-    padding: 40px;
     border-radius: 30px;
 }
 
