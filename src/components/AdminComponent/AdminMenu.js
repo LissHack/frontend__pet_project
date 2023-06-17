@@ -1,21 +1,20 @@
 import React, {useState} from 'react';
-import NavbarAdmin from "../../components/UI/Navbar/NavbarAdmin";
-import MyButton from "../../components/UI/MyButton/MyButton";
-import cl from './Admin.module.css'
-import CreateDepartment from "../../components/UI/MyModal/MyModalAdmin/CreateDepartment";
-import CreatePosition from "../../components/UI/MyModal/MyModalAdmin/CreatePosition";
-import CreateUser from "../../components/UI/MyModal/MyModalAdmin/CreateUser";
 import {Container} from "react-bootstrap";
+import MyButton from "../UI/MyButton/MyButton";
+import CreateDepartment from "../UI/MyModal/MyModalAdmin/CreateDepartment";
+import CreatePosition from "../UI/MyModal/MyModalAdmin/CreatePosition";
+import CreateUser from "../UI/MyModal/MyModalAdmin/CreateUser";
 
-const Admin = () => {
+
+const AdminMenu = () => {
     const [depVisible, setDepVisible] = useState(false)
     const [positionVisible, setPositionVisible] = useState(false)
     const [userVisible, setUserVisible] = useState(false)
 
+
     return (
         <Container>
-            <NavbarAdmin/>
-            <div className={cl.btn__admin}>
+            <div style={{display: 'flex', padding: '20px 20px'}}>
                 <MyButton
                     onClick={() => setDepVisible(true)}
                 >
@@ -39,4 +38,4 @@ const Admin = () => {
     );
 };
 
-export default Admin;
+export default AdminMenu;

@@ -3,7 +3,7 @@
     background-color: #4f4f4f;
     height: 60px;
     width: auto;
-    justify-content: end;
+    justify-content: flex-end;
     align-items: center;
     padding-right: 10px;
 
