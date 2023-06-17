@@ -8,27 +8,26 @@ import {useNavigate} from "react-router-dom";
 
 
 const Auth = observer(() => {
-    // const {user} = useContext(Context)
-    // const navigate = useNavigate()
+    const {user} = useContext(Context)
+    const navigate = useNavigate()
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
-    // const isLogin = location.pathname === LOGIN_ROUTE
+    const isLogin = location.pathname === LOGIN_ROUTE
 
-    // const click = async () => {
-    //     try {
-    //         let data;
-    //         if (isLogin) {
-    //             data = await login(email, password)
-    //         }
-    //         user.setUser(data)
-    //         user.setIsAuth(true)
-    //         navigate(USER_ROUTE)
-    //     } catch (e) {
-    //         alert(e.response.data.message)
-    //     }
-    // }
-
+    const click = async () => {
+        try {
+            let data;
+            if (isLogin) {
+                data = await login(email, password)
+            }
+            user.setUsers(data)
+            user.setIsAuth(true)
+            navigate(USER_ROUTE)
+        } catch (e) {
+            alert(e.response.data.message)
+        }
+    }
 
 
     return (
@@ -52,6 +51,7 @@ const Auth = observer(() => {
                         onChange={e => setPassword(e.target.value)}
                     />
                     <button
+                        onClick={click}
                         className={cl.login_form_btn}
                         type="submit">
                         Войти

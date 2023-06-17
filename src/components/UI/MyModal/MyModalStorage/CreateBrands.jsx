@@ -1,13 +1,20 @@
-import React from 'react';
-import Modal from "react-bootstrap/Modal";
-
+import React, {useState} from 'react';
 import cl from '../MyModal.module.css'
-import {Card} from "react-bootstrap";
+import {Card, Modal, Form} from "react-bootstrap";
 import MyInput from "../../input/MyInput";
-import Form from "react-bootstrap/Form";
 import MyButton from "../../MyButton/MyButton";
+import {createBrand} from "../../../../http/deviceAPI";
 
 const CreateBrand = ({show, onHide}) => {
+
+    const [value, setValue] = useState('')
+    const addBrand = () => {
+        createBrand({name: value}).then(data => {
+            setValue('')
+            onHide()
+        })
+    }
+
     return (
         <Modal className={cl.container__modal}
                show={show}
@@ -19,11 +26,13 @@ const CreateBrand = ({show, onHide}) => {
                 <Card className={cl.content__modal}>
                     <h3>Добавить бренд</h3>
                     <MyInput
+                        value={value}
+                        onChange={e => setValue(e.target.value)}
                         placeholder={'Введите название бренда'}
                     />
                     <div className={cl.modal__btn}>
                         <MyButton onClick={onHide}>Закрыть</MyButton>
-                        <MyButton onClick={onHide}>Добавить</MyButton>
+                        <MyButton onClick={addBrand}>Добавить</MyButton>
                     </div>
                 </Card>
             </Form>

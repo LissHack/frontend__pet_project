@@ -1,10 +1,11 @@
-import React, {useContext, useState} from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 import {observer} from "mobx-react-lite";
 import {Context} from "../../../../index";
 import {Card, Dropdown, Modal, Row} from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import cl from '../MyModal.module.css'
 import MyButton from "../../MyButton/MyButton";
+import {createDevice, fetchBrands, fetchTypes} from "../../../../http/deviceAPI";
 
 
 const CreateDevice = observer(({show, onHide}) => {
@@ -12,12 +13,12 @@ const CreateDevice = observer(({show, onHide}) => {
     const [info, setInfo] = useState([])
     const [name, setName] = useState('')
     const [useCount, setUseCount] = useState(0)
-    // const [file, setFile] = useState(null)
+    const [file, setFile] = useState(null)
 
-    // useEffect(() => {
-    //     fetchTypes().then(data => device.setTypes(data))
-    //     fetchBrands().then(data => device.setBrands(data))
-    // }, [])
+    useEffect(() => {
+        fetchTypes().then(data => device.setTypes(data))
+        fetchBrands().then(data => device.setBrands(data))
+    }, [])
 
     const addInfo = (e) => {
         e.preventDefault()
@@ -30,20 +31,20 @@ const CreateDevice = observer(({show, onHide}) => {
     const changeInfo = (key, value, number) => {
         setInfo(info.map(i => i.number === number ? {...i, [key]: value} : i))
     }
-    // const selectFile = e => {
-    //     setFile(e.target.files[0])
-    // }
+    const selectFile = e => {
+        setFile(e.target.files[0])
+    }
 
-    // const addDevice = () => {
-    //     const formData = new FormData
-    //     formData.append('name', name)
-    //     formData.append('count', `${useCount}`)
-    //     formData.append('img', file)
-    //     formData.append('BrandId', device.selectedBrand.id)
-    //     formData.append('TypeId', device.selectedType.id)
-    //     formData.append('info', JSON.stringify(info))
-    //     createDevice(formData).then(data => onHide())
-    // }
+    const addDevice = () => {
+        const formData = new FormData
+        formData.append('name', name)
+        formData.append('count', `${useCount}`)
+        formData.append('img', file)
+        formData.append('BrandId', device.selectedBrand.id)
+        formData.append('TypeId', device.selectedType.id)
+        formData.append('info', JSON.stringify(info))
+        createDevice(formData).then(data => onHide())
+    }
 
     return (
         <Modal className={cl.container__modal}
@@ -64,7 +65,8 @@ const CreateDevice = observer(({show, onHide}) => {
                         {device.types.map(type =>
                             <Dropdown.Item
                                 onClick={() => device.setSelectedType(type)}
-                                key={type.id}>
+                                key={type.id}
+                            >
                                 {type.name}
                             </Dropdown.Item>
                         )}
@@ -85,19 +87,20 @@ const CreateDevice = observer(({show, onHide}) => {
                 </Dropdown>
                 <Form.Control
                     className={cl.modal__input}
-                    onClick={name}
+                    value={name}
                     onChange={e => setName(e.target.value)}
                     placeholder="Введите название устройства"
                 />
                 <Form.Control
                     className={cl.modal__input}
-                    onClick={useCount}
+                    value={useCount}
                     onChange={e => setUseCount(Number(e.target.value))}
                     placeholder="Введите количество"
                     type="number"
                 />
                 <Form.Control
                     className={cl.modal__input}
+                    onChange={selectFile}
                     type="file"
                 />
                 <hr/>
@@ -129,7 +132,7 @@ const CreateDevice = observer(({show, onHide}) => {
                 )}
                 <Card className={cl.modal__footer_btn}>
                     <MyButton onClick={onHide}>Закрыть</MyButton>
-                    <MyButton onClick={onHide}>Добавить</MyButton>
+                    <MyButton onClick={addDevice}>Добавить</MyButton>
                 </Card>
             </Form>
         </Modal>
