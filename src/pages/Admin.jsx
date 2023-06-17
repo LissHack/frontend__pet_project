@@ -5,6 +5,7 @@ import Form from "react-bootstrap/Form";
 import AdminMenu from "../components/AdminComponent/AdminMenu";
 import DepartmentBar from "../components/AdminComponent/DepartmentBar";
 import cl from "./DevicePage/DevicePage.module.css";
+import UserList from "../components/AdminComponent/UserList";
 
 const Admin = () => {
     return (
@@ -14,6 +15,9 @@ const Admin = () => {
             <Form className={cl.container__device_page}>
                 <Card>
                     <DepartmentBar/>
+                </Card>
+                <Card>
+                    <UserList/>
                 </Card>
             </Form>
         </Container>
