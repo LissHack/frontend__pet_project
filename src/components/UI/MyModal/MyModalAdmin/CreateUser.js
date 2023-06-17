@@ -19,14 +19,12 @@ const CreateUser = ({show, onHide}) => {
             <Form className={cl.modal}>
                 <Card className={cl.content__modal}>
                     <h3>Добавить работника</h3>
-                    <Form>
                         <Dropdown.Toggle>Выберите должность</Dropdown.Toggle>
                         <Dropdown.Menu>
                             {user.users.map(u =>
                                 <Dropdown.Item>{u.name}</Dropdown.Item>
                             )}
                         </Dropdown.Menu>
-                    </Form>
                     <div className={cl.modal__btn}>
                         <MyButton onClick={onHide}>Закрыть</MyButton>
                         <MyButton onClick={onHide}>Добавить</MyButton>

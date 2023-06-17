@@ -1,8 +1,10 @@
 import React, {useContext, useState} from 'react'
 import {observer} from "mobx-react-lite";
 import {Context} from "../../../../index";
-import {Button,  Dropdown, Modal, Row} from "react-bootstrap";
+import {Card, Dropdown, Modal, Row} from "react-bootstrap";
 import Form from "react-bootstrap/Form";
+import cl from '../MyModal.module.css'
+import MyButton from "../../MyButton/MyButton";
 
 
 const CreateDevice = observer(({show, onHide}) => {
@@ -43,20 +45,21 @@ const CreateDevice = observer(({show, onHide}) => {
     // }
 
     return (
-        <Modal
-            show={show}
-            onHide={onHide}
-            size="lg"
-            centered
+        <Modal className={cl.container__modal}
+               show={show}
+               onHide={onHide}
+               size="lg"
+               centered
         >
-            <div>
+            <Modal.Title>
                 Добавить устройство
-            </div>
+            </Modal.Title>
 
-            <Form>
-                <Dropdown className="mt-4">
-                    <Dropdown.Toggle>{device.selectedType.name || 'Выберите тип'}</Dropdown.Toggle>
-                    <Dropdown.Menu>
+            <Form className={cl.modal}>
+                <Dropdown className={cl.modal__dropdown}>
+                    <Dropdown.Toggle
+                        className={cl.modal__dropdown_btn}>{device.selectedType.name || 'Выберите тип'}</Dropdown.Toggle>
+                    <Dropdown.Menu className={cl.modal__dropdown_content}>
                         {device.types.map(type =>
                             <Dropdown.Item
                                 onClick={() => device.setSelectedType(type)}
@@ -66,9 +69,10 @@ const CreateDevice = observer(({show, onHide}) => {
                         )}
                     </Dropdown.Menu>
                 </Dropdown>
-                <Dropdown className="mt-4">
-                    <Dropdown.Toggle>{device.selectedBrand.name || 'Выберите бренд'}</Dropdown.Toggle>
-                    <Dropdown.Menu>
+                <Dropdown className={cl.modal__dropdown}>
+                    <Dropdown.Toggle
+                        className={cl.modal__dropdown_btn}>{device.selectedBrand.name || 'Выберите бренд'}</Dropdown.Toggle>
+                    <Dropdown.Menu className={cl.modal__dropdown_content}>
                         {device.brands.map(brand =>
                             <Dropdown.Item
                                 onClick={() => device.setSelectedBrand(brand)}
@@ -79,50 +83,56 @@ const CreateDevice = observer(({show, onHide}) => {
                     </Dropdown.Menu>
                 </Dropdown>
                 <Form.Control
+                    className={cl.modal__input}
                     onClick={name}
                     onChange={e => setName(e.target.value)}
-                    className="mt-4"
                     placeholder="Введите название устройства"
                 />
                 <Form.Control
+                    className={cl.modal__input}
                     onClick={useCount}
                     onChange={e => setUseCount(Number(e.target.value))}
                     placeholder="Введите количество"
                     type="number"
                 />
                 <Form.Control
+                    className={cl.modal__input}
                     type="file"
                 />
                 <hr/>
-                <Button
+                <MyButton
                     onClick={addInfo}
                 >
                     Добавить новое свойство
-                </Button>
+                </MyButton>
                 {info.map(i =>
                     <Row key={i.number}>
                         <Form.Control
+                            className={cl.modal__input}
                             value={i.title}
                             onChange={e => changeInfo('title', e.target.value, i.number)}
                             placeholder="Введите название свойства"
                         />
                         <Form.Control
+                            className={cl.modal__input}
                             value={i.description}
                             onChange={e => changeInfo('description', e.target.value, i.number)}
                             placeholder="Введите описание свойства"
                         />
-                        <Button
+                        <MyButton
                             onClick={() => removeInfo(i.number)}
                         >
                             Удалить
-                        </Button>
+                        </MyButton>
                     </Row>
                 )}
+                <Card>
+                    <MyButton onClick={onHide}>Закрыть</MyButton>
+                    <MyButton onClick={onHide}>Добавить</MyButton>
+                </Card>
+
+
             </Form>
-
-            <Button onClick={onHide}>Закрыть</Button>
-            <Button onClick={onHide}>Добавить</Button>
-
         </Modal>
     );
 });
