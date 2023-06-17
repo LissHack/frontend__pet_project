@@ -1,0 +1,24 @@
+.container__department_bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 180px;
+    margin: 40px 30px;
+}
+
+.card__department_bar {
+    padding: 11px 11px;
+    color: white;
+    font-size: 14px;
+    border: 2px solid white;
+    cursor: pointer;
+    border-radius: 13px;
+    text-align: center;
+    background-color: #4f4f4f;
+}
+
+.card__department_bar:hover {
+    color: #4f4f4f;
+    border: 2px solid #4f4f4f;
+    background-color: white;
+}

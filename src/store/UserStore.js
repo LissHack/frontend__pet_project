@@ -7,37 +7,33 @@ export default class UserStore {
                 id: 1,
                 name: 'Иван',
                 lastname: 'Иванов',
-                secondname: 'Иванович',
-                email: 'ivanov@email.com',
-                password: 'password',
-                tabel: '123'
+                middlename: 'Иванович',
+                grade: 1,
+                email: 'ivanov@email.com'
             },
             {
                 id: 2,
                 name: 'Петр',
                 lastname: 'Петров',
-                secondname: 'Петрович',
-                email: 'petrov@email.com',
-                password: 'password1',
-                tabel: '456'
+                middlename: 'Петрович',
+                grade: 3,
+                email: 'petrov@email.com'
             },
             {
                 id: 3,
                 name: 'Клим',
                 lastname: 'Пупкин',
-                secondname: 'Александрович',
-                email: 'pupkin@email.com',
-                password: 'password2',
-                tabel: '789'
+                middlename: 'Александрович',
+                grade: 2,
+                email: 'pupkin@email.com'
             },
             {
                 id: 4,
                 name: 'Алексей',
                 lastname: 'Сидоров',
-                secondname: 'Сергеевич',
-                email: 'sidorov@email.com',
-                password: 'password3',
-                tabel: '159'
+                middlename: 'Сергеевич',
+                grade: 1,
+                email: 'sidorov@email.com'
             },
 
         ]
@@ -51,13 +47,15 @@ export default class UserStore {
 
         ]
 
-        this._positions = [
+        this._jobs = [
             {id: 1, name: 'Транспортный цех'},
             {id: 2, name: 'Инструментальный цех'},
             {id: 3, name: 'Модельный цех'},
             {id: 3, name: 'Инженерный цех'},
         ]
         this._isAuth = true
+        this._selectedDepartment = {}
+        this._selectedJob = {}
         makeAutoObservable(this)
     }
 
@@ -65,16 +63,24 @@ export default class UserStore {
         this._isAuth = bool
     }
 
-    setUsers(user) {
-        this._user = user
+    setUsers(users) {
+        this._users = users
     }
 
     setDepartments(departments) {
         this._departments = departments
     }
 
-    setPositions(positions) {
-        this._positions = positions
+    setJobs(jobs) {
+        this._jobs = jobs
+    }
+
+    setSelectedDepartment(department) {
+        this._selectedDepartment = department
+    }
+
+    setSelectedJob(job) {
+        this._selectedJob = job
     }
 
 
@@ -90,8 +96,16 @@ export default class UserStore {
         return this._departments
     }
 
-    get positions() {
-        return this._positions
+    get jobs() {
+        return this._jobs
+    }
+
+    get selectedDepartment() {
+        return this._selectedDepartment
+    }
+
+    get selectedJob() {
+        return this._selectedJob
     }
 
 }
