@@ -12,7 +12,7 @@ const StorageMenu = () => {
     const [deviceVisible, setDeviceVisible] = useState(false)
 
     return (
-        <Container className="d-flex flex-column ms-5-5">
+        <Container style={{padding: 10}}>
                 <MyButton
                     onClick={() => setTypeVisible(true)}
                 >

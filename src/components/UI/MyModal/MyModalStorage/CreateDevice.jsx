@@ -19,7 +19,8 @@ const CreateDevice = observer(({show, onHide}) => {
     //     fetchBrands().then(data => device.setBrands(data))
     // }, [])
 
-    const addInfo = () => {
+    const addInfo = (e) => {
+        e.preventDefault()
         setInfo([...info, {title: '', description: '', number: Date.now()}])
     }
     const removeInfo = (number) => {
@@ -126,12 +127,10 @@ const CreateDevice = observer(({show, onHide}) => {
                         </MyButton>
                     </Row>
                 )}
-                <Card>
+                <Card className={cl.modal__footer_btn}>
                     <MyButton onClick={onHide}>Закрыть</MyButton>
                     <MyButton onClick={onHide}>Добавить</MyButton>
                 </Card>
-
-
             </Form>
         </Modal>
     );
