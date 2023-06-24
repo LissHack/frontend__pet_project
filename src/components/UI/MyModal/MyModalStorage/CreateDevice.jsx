@@ -12,7 +12,7 @@ const CreateDevice = observer(({show, onHide}) => {
     const {device} = useContext(Context)
     const [info, setInfo] = useState([])
     const [name, setName] = useState('')
-    const [useCount, setUseCount] = useState(0)
+    const [useCount, setUseCount] = useState(1)
     const [file, setFile] = useState(null)
 
     useEffect(() => {
@@ -36,7 +36,7 @@ const CreateDevice = observer(({show, onHide}) => {
     }
 
     const addDevice = () => {
-        const formData = new FormData
+        const formData = new FormData()
         formData.append('name', name)
         formData.append('count', `${useCount}`)
         formData.append('img', file)

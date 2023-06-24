@@ -19,7 +19,7 @@ const DeviceItem = ({device}) => {
                     </div>
                     <Image
                         className={cl.image__device_list}
-                        src={device.img}
+                        src={process.env.REACT_APP_API_URL + device.img}
                     />
                     <div>{device.state_at}</div>
                 </div>

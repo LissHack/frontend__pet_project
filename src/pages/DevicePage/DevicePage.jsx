@@ -27,7 +27,7 @@ const DevicePage = () => {
             <div className={cl.container__device_page}>
 
                 <Card>
-                    <Image className={cl.card__img} src={device.img}/>
+                    <Image className={cl.card__img} src={process.env.REACT_APP_API_URL + device.img}/>
                 </Card>
                 <Card className={cl.card__desc}>
                     <h3>Характеристики</h3>
