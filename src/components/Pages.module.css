@@ -1,0 +1,25 @@
+
+.pagination__container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+
+.pagination__btn {
+    margin-top: 5px;
+    list-style-type: none;
+    text-decoration: none;
+    width: 30px;
+    height: 30px;
+    border: 2px solid teal;
+    margin-right: 5px;
+    border-radius: 3px;
+    background: white;
+}
+
+.pagination__btn:hover {
+    color: white;
+    background-color: teal;
+}
