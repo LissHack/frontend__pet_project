@@ -7,9 +7,16 @@ import {Button, Nav} from "react-bootstrap";
 import MyButton from "../MyButton/MyButton";
 import {observer} from "mobx-react-lite";
 
-const NavbarAdmin = observer(() => {
+const NavbarStorage = observer(() => {
     const {storage} = useContext(Context)
     const navigate = useNavigate()
+
+    const logOut = ()=> {
+        storage.setStorage({})
+        storage.setIsAuth(false)
+        localStorage.removeItem('token')
+    }
+
 
     return (
         <div className={cl.navbar}>
@@ -21,17 +28,19 @@ const NavbarAdmin = observer(() => {
                     <MyButton onClick={() => navigate(ORDER_ROUTE)}>
                         Заказы
                     </MyButton>
-                    <MyButton onClick={() => navigate(LOGIN_ROUTE)}>
+                    <MyButton
+                        onClick={() => logOut()}
+                    >
                         Выйти
                     </MyButton>
                 </Nav>
                 :
                 <Nav>
-                    <Button onClick={() => storage.setIsAuth(true)}>Авторизация</Button>
+                    <Button onClick={() => navigate(LOGIN_ROUTE)}>Авторизация</Button>
                 </Nav>
             }
         </div>
     );
 });
 
-export default NavbarAdmin;
+export default NavbarStorage;

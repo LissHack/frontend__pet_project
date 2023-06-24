@@ -11,6 +11,13 @@ const NavbarAdmin = observer(() => {
     const {user} = useContext(Context)
     const navigate = useNavigate()
 
+    const logOut = ()=> {
+        user.setUsers({})
+        user.setIsAuth(false)
+        localStorage.removeItem('token')
+    }
+
+
     return (
         <div className={cl.navbar}>
             {user.isAuth ?
@@ -21,13 +28,13 @@ const NavbarAdmin = observer(() => {
                     <MyButton onClick={() => navigate(REQUEST_ROUTE)}>
                         Заказ
                     </MyButton>
-                    <MyButton onClick={() => navigate(LOGIN_ROUTE)}>
+                    <MyButton onClick={() => logOut()}>
                         Выйти
                     </MyButton>
                 </Nav>
                 :
                 <Nav>
-                    <Button onClick={() => user.setIsAuth(true)}>Авторизация</Button>
+                    <Button onClick={() => navigate(USER_ROUTE)}>Авторизация</Button>
                 </Nav>
             }
         </div>
