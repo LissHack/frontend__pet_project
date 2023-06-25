@@ -5,6 +5,7 @@ import {observer} from "mobx-react-lite";
 import {Context} from "./index";
 import {check} from "./http/userApi";
 import {Spinner} from "react-bootstrap";
+import Loader from "./components/UI/Loader/Loader";
 
 
 const App = observer(() => {
@@ -18,7 +19,7 @@ const App = observer(() => {
         }).finally(() => setLoading(false))
     }, [])
     if (loading) {
-        return <Spinner animation={'grow'}/>
+        return <Loader/>
     }
 
     return (
