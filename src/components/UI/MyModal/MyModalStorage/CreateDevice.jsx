@@ -5,7 +5,7 @@ import {Card, Dropdown, Modal, Row} from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import cl from '../MyModal.module.css'
 import MyButton from "../../MyButton/MyButton";
-import {createDevice, fetchBrands, fetchTypes} from "../../../../http/deviceAPI";
+import {createDevice, fetchBrands, fetchConditions, fetchTypes} from "../../../../http/deviceAPI";
 
 
 const CreateDevice = observer(({show, onHide}) => {
@@ -18,6 +18,8 @@ const CreateDevice = observer(({show, onHide}) => {
     useEffect(() => {
         fetchTypes().then(data => device.setTypes(data))
         fetchBrands().then(data => device.setBrands(data))
+        fetchConditions().then(data => device.setConditions(data))
+
     }, [])
 
     const addInfo = (e) => {
@@ -42,6 +44,7 @@ const CreateDevice = observer(({show, onHide}) => {
         formData.append('img', file)
         formData.append('BrandId', device.selectedBrand.id)
         formData.append('TypeId', device.selectedType.id)
+        formData.append('ConditionId', device.selectedCondition.id)
         formData.append('info', JSON.stringify(info))
         createDevice(formData).then(data => onHide())
     }
@@ -81,6 +84,19 @@ const CreateDevice = observer(({show, onHide}) => {
                                 onClick={() => device.setSelectedBrand(brand)}
                                 key={brand.id}>
                                 {brand.name}
+                            </Dropdown.Item>
+                        )}
+                    </Dropdown.Menu>
+                </Dropdown>
+                <Dropdown className={cl.modal__dropdown}>
+                    <Dropdown.Toggle
+                        className={cl.modal__dropdown_btn}>{device.selectedCondition.name || 'Выберите состояние'}</Dropdown.Toggle>
+                    <Dropdown.Menu className={cl.modal__dropdown_content}>
+                        {device.conditions.map(condition =>
+                            <Dropdown.Item
+                                onClick={() => device.setSelectedCondition(condition)}
+                                key={condition.id}>
+                                {condition.name}
                             </Dropdown.Item>
                         )}
                     </Dropdown.Menu>
