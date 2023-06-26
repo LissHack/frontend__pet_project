@@ -12,7 +12,8 @@
 }
 
 .card__device_list {
-    width: 150px;
+    width: 90%;
+    height: 90%;
     cursor: pointer;
     border: #4f4f4f;
 }

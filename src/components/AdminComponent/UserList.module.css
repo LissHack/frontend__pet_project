@@ -1,0 +1,4 @@
+.content__user{
+    display: flex;
+    flex-wrap: wrap;
+}
