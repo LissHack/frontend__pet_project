@@ -13,6 +13,7 @@ const CreateUser = ({show, onHide}) => {
     const [lastname, setLastname] = useState('')
     const [middlename, setMiddlename] = useState('')
     const [grade, setGrade] = useState(1)
+    const [email, setEmail] = useState('')
 
 
     useEffect(() => {
@@ -27,6 +28,7 @@ const CreateUser = ({show, onHide}) => {
             formData.append('lastname', lastname)
             formData.append('middlename', middlename)
             formData.append('grade', grade)
+            formData.append('email', email)
             formData.append('JobId', user.selectedJob.id)
             formData.append('DepartmentId', user.selectedDepartment.id)
             createUser(formData).then(data => onHide())
@@ -69,6 +71,13 @@ const CreateUser = ({show, onHide}) => {
                         onChange={e => setGrade(Number(e.target.value))}
                         placeholder="Введите ранг"
                         type="number"
+                    />
+                    <Form.Control
+                        className={cl.modal__input}
+                        value={email}
+                        onChange={e => setEmail(e.target.value)}
+                        placeholder="Введите почту"
+                        type='email'
                     />
 
                     <Dropdown className={cl.modal__dropdown}>

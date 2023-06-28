@@ -1,13 +1,21 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Modal from "react-bootstrap/Modal";
-
 import cl from '../MyModal.module.css'
 import {Card} from "react-bootstrap";
 import MyInput from "../../input/MyInput";
 import Form from "react-bootstrap/Form";
 import MyButton from "../../MyButton/MyButton";
+import {createDepartment} from "../../../../http/adminApi";
 
 const CreateDepartment = ({show, onHide}) => {
+    const [value, setValue] = useState('')
+    const addDepartment = () => {
+        createDepartment({name: value}).then(data => {
+            setValue('')
+            onHide()
+        })
+    }
+
     return (
         <Modal className={cl.container__modal}
                show={show}
@@ -23,7 +31,7 @@ const CreateDepartment = ({show, onHide}) => {
                     />
                     <div className={cl.modal__btn}>
                         <MyButton onClick={onHide}>Закрыть</MyButton>
-                        <MyButton onClick={onHide}>Добавить</MyButton>
+                        <MyButton onClick={addDepartment}>Добавить</MyButton>
                     </div>
                 </Card>
             </Form>

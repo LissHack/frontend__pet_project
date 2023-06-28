@@ -9,7 +9,8 @@ export default class UserStore {
                 lastname: 'Иванов',
                 middlename: 'Иванович',
                 grade: 1,
-                email: 'ivanov@email.com'
+                email: 'ivanov@email.com',
+                role: 'Admin'
             },
             {
                 id: 2,
@@ -17,7 +18,8 @@ export default class UserStore {
                 lastname: 'Петров',
                 middlename: 'Петрович',
                 grade: 3,
-                email: 'petrov@email.com'
+                email: 'petrov@email.com',
+                role: 'Storage'
             },
             {
                 id: 3,
@@ -25,7 +27,8 @@ export default class UserStore {
                 lastname: 'Пупкин',
                 middlename: 'Александрович',
                 grade: 2,
-                email: 'pupkin@email.com'
+                email: 'pupkin@email.com',
+                role: 'User'
             },
             {
                 id: 4,
@@ -33,7 +36,8 @@ export default class UserStore {
                 lastname: 'Сидоров',
                 middlename: 'Сергеевич',
                 grade: 1,
-                email: 'sidorov@email.com'
+                email: 'sidorov@email.com',
+                role: 'User'
             },
 
         ]

@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {Container} from "react-bootstrap";
 import MyButton from "../UI/MyButton/MyButton";
 import CreateDepartment from "../UI/MyModal/MyModalAdmin/CreateDepartment";
-import CreatePosition from "../UI/MyModal/MyModalAdmin/CreatePosition";
+import CreateJob from "../UI/MyModal/MyModalAdmin/CreateJob";
 import CreateUser from "../UI/MyModal/MyModalAdmin/CreateUser";
 
 
@@ -32,7 +32,7 @@ const AdminMenu = () => {
                 </MyButton>
             </div>
             <CreateDepartment show={depVisible} onHide={() => setDepVisible(false)}/>
-            <CreatePosition show={positionVisible} onHide={() => setPositionVisible(false)}/>
+            <CreateJob show={positionVisible} onHide={() => setPositionVisible(false)}/>
             <CreateUser show={userVisible} onHide={() => setUserVisible(false)}/>
         </Container>
     );
