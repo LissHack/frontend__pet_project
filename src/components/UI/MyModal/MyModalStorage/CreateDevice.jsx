@@ -39,14 +39,18 @@ const CreateDevice = observer(({show, onHide}) => {
 
     const addDevice = () => {
         const formData = new FormData()
-        formData.append('name', name)
-        formData.append('count', `${useCount}`)
-        formData.append('img', file)
-        formData.append('BrandId', device.selectedBrand.id)
-        formData.append('TypeId', device.selectedType.id)
-        formData.append('ConditionId', device.selectedCondition.id)
-        formData.append('info', JSON.stringify(info))
-        createDevice(formData).then(data => onHide())
+        try {
+            formData.append('name', name)
+            formData.append('count', `${useCount}`)
+            formData.append('img', file)
+            formData.append('BrandId', device.selectedBrand.id)
+            formData.append('TypeId', device.selectedType.id)
+            formData.append('ConditionId', device.selectedCondition.id)
+            formData.append('info', JSON.stringify(info))
+            createDevice(formData).then(data => onHide())
+        } catch (e) {
+            alert(e)
+        }
     }
 
     return (

@@ -22,14 +22,17 @@ const CreateUser = ({show, onHide}) => {
 
     const addUser = () => {
         const formData = new FormData()
-        formData.append('name', name)
-        formData.append('lastname', lastname)
-        formData.append('middlename', middlename)
-        formData.append('grade', grade)
-        formData.append('JobId', user.selectedJob.id)
-        formData.append('DepartmentId', user.selectedDepartment.id)
-
-        createUser(formData).then(data => onHide())
+        try {
+            formData.append('name', name)
+            formData.append('lastname', lastname)
+            formData.append('middlename', middlename)
+            formData.append('grade', grade)
+            formData.append('JobId', user.selectedJob.id)
+            formData.append('DepartmentId', user.selectedDepartment.id)
+            createUser(formData).then(data => onHide())
+        } catch (e) {
+            alert(e)
+        }
     }
 
     return (
