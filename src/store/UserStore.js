@@ -2,7 +2,7 @@ import {makeAutoObservable} from "mobx";
 
 export default class UserStore {
     constructor() {
-        this._user = [
+        this._users = [
             {
                 id: 1,
                 name: 'Иван',
@@ -38,7 +38,7 @@ export default class UserStore {
 
         ]
 
-        this._departments = [
+        this._jobs = [
             {id: 1, name: 'Водитель'},
             {id: 2, name: 'Кладовщик'},
             {id: 3, name: 'Мастер участка'},
@@ -47,7 +47,7 @@ export default class UserStore {
 
         ]
 
-        this._jobs = [
+        this._departments = [
             {id: 1, name: 'Транспортный цех'},
             {id: 2, name: 'Инструментальный цех'},
             {id: 3, name: 'Модельный цех'},
@@ -65,8 +65,8 @@ export default class UserStore {
         this._isAuth = bool
     }
 
-    setUser(user) {
-        this._user = user
+    setUsers(users) {
+        this._users = users
     }
 
     setIsAdmin(admin) {
@@ -98,8 +98,8 @@ export default class UserStore {
         return this._isAuth
     }
 
-    get user() {
-        return this._user
+    get users() {
+        return this._users
     }
 
     get isAdmin() {

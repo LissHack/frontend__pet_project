@@ -12,7 +12,7 @@ const NavbarAdmin = observer(() => {
     const navigate = useNavigate()
 
     const logOut = ()=> {
-        user.setUser({})
+        user.setUsers({})
         user.setIsAuth(false)
         localStorage.removeItem('token')
     }

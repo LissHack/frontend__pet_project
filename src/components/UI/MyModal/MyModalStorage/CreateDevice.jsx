@@ -56,9 +56,9 @@ const CreateDevice = observer(({show, onHide}) => {
                size="lg"
                centered
         >
-            <Modal.Title>
-                Добавить устройство
-            </Modal.Title>
+            {/*<Modal.Title>*/}
+            {/*    Добавить устройство*/}
+            {/*</Modal.Title>*/}
 
             <Form className={cl.modal} style={{padding: 40}}>
                 <Dropdown className={cl.modal__dropdown}>
