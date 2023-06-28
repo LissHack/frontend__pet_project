@@ -5,7 +5,6 @@ import {observer} from "mobx-react-lite";
 import {Context} from "./index";
 import {check} from "./http/userApi";
 import Loader from "./components/UI/Loader/Loader";
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const App = observer(() => {

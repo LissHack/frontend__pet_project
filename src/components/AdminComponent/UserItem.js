@@ -14,24 +14,50 @@ const UserItem = observer(({columns, rows, actions}) => {
     const [editedRow, setEditedRow] = useState();
 
 
-    const editRow = (id) => {
+    const editRow = (rowID) => {
         setIsEditMode(true);
         setEditedRow(undefined);
-        setRowIDToEdit(id);
+        setRowIDToEdit(rowID);
     }
 
 
-    const onChangeField = (e, id) => {
-        const {name: fieldName, value} = e.target;
+    const onChangeField = (e, rowID) => {
+        const {name: fieldName, value} = e.target.value;
         setEditedRow({
-            id: id,
+            id: rowID,
             [fieldName]: value
         })
     }
 
-    const saveRowChanges = (key, value, number) => {
+    const saveRowChanges = () => {
         setIsEditMode(false);
-        setRowsState(rowsState.map(i => i.number === number ? {...i, [key]: value} : i))
+
+        const newData = rowsState.map(row => {
+            if (row.id === editedRow.id) {
+                if (editedRow.firstname) {
+                    row.firstname = editedRow.firstname;
+                }
+                if (editedRow.lastname) {
+                    row.lastname = editedRow.lastname;
+                }
+                if (editedRow.middlename) {
+                    row.middlename = editedRow.middlename;
+                }
+                if (editedRow.grade) {
+                    row.grade = editedRow.grade;
+                }
+                if (editedRow.email) {
+                    row.email = editedRow.email;
+                }
+
+                if (editedRow.role) {
+                    row.role = editedRow.role;
+                }
+            }
+            return row
+        })
+        setRowsState(newData);
+        setEditedRow(undefined)
     }
 
     const cancelEditing = () => {
@@ -39,8 +65,8 @@ const UserItem = observer(({columns, rows, actions}) => {
         setEditedRow(undefined);
     }
 
-    function removeRow(id) {
-        setRowsState(rowsState.filter(row => row.id !== id))
+    const removeRow = (rowID) => {
+        setRowsState(rowsState.filter(row => row.id !== rowID))
     }
 
     return (
@@ -68,7 +94,7 @@ const UserItem = observer(({columns, rows, actions}) => {
                                     defaultValue={editedRow ? editedRow.name : row.name}
                                     id={row.id}
                                     name='name'
-                                    onChange={(e) => onChangeField(e, row.id)}
+                                    onChange={e => onChangeField(e, row.id)}
                                 />
                                 : row.name
                             }
@@ -80,7 +106,7 @@ const UserItem = observer(({columns, rows, actions}) => {
                                     defaultValue={editedRow ? editedRow.lastname : row.lastname}
                                     id={row.id}
                                     name='lastName'
-                                    onChange={(e) => onChangeField(e, row.id)}
+                                    onChange={e => onChangeField(e, row.id)}
                                 />
                                 : row.lastname
                             }
@@ -92,7 +118,7 @@ const UserItem = observer(({columns, rows, actions}) => {
                                     defaultValue={editedRow ? editedRow.middlename : row.middlename}
                                     id={row.id}
                                     name='middlename'
-                                    onChange={(e) => onChangeField(e, row.id)}
+                                    onChange={e => onChangeField(e, row.id)}
                                 />
                                 : row.middlename
                             }

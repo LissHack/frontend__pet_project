@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Card, Image, Row} from "react-bootstrap";
+import {Card, Container, Image, Row} from "react-bootstrap";
 import NavbarStorage from "../../components/UI/Navbar/NavbarStorage";
 import cl from './DevicePage.module.css'
 import {useParams} from "react-router-dom";
@@ -22,7 +22,7 @@ const DevicePage = () => {
     }, [])
 
     return (
-        <div>
+        <Container>
             <NavbarStorage/>
             <div className={cl.container__device_page}>
 
@@ -39,7 +39,7 @@ const DevicePage = () => {
                     )}
                 </Card>
             </div>
-        </div>
+        </Container>
     );
 };
 

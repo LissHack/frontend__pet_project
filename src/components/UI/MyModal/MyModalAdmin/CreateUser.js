@@ -3,7 +3,7 @@ import Modal from "react-bootstrap/Modal";
 import cl from "../MyModal.module.css";
 import Form from "react-bootstrap/Form";
 import {Card, Dropdown} from "react-bootstrap";
-import MyInput from "../../input/MyInput";
+// import MyInput from "../../input/MyInput";
 import MyButton from "../../MyButton/MyButton";
 import {Context} from "../../../../index";
 
@@ -22,7 +22,7 @@ const CreateUser = ({show, onHide}) => {
                         <Dropdown.Toggle>Выберите должность</Dropdown.Toggle>
                         <Dropdown.Menu>
                             {user.users.map(u =>
-                                <Dropdown.Item>{u.name}</Dropdown.Item>
+                                <Dropdown.Item key={user.id}>{u.name}</Dropdown.Item>
                             )}
                         </Dropdown.Menu>
                     <div className={cl.modal__btn}>

@@ -1,7 +1,7 @@
 import React, {useContext, useState} from 'react';
 import cl from './Auth.module.css'
 import {observer} from "mobx-react-lite";
-import {LOGIN_ROUTE, USER_ROUTE} from "../../utils/consts";
+import { USER_ROUTE} from "../../utils/consts";
 import {login} from "../../http/userApi";
 import {Context} from "../../index";
 import {useNavigate} from "react-router-dom";
@@ -13,14 +13,11 @@ const Auth = observer(() => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
-    const isLogin = location.pathname === LOGIN_ROUTE
+    // const isLogin = location.pathname === LOGIN_ROUTE
 
     const click = async () => {
         try {
-            let data;
-            if (isLogin) {
-                data = await login(email, password)
-            }
+            let data = await login(email, password)
             user.setUsers(data)
             user.setIsAuth(true)
             navigate(USER_ROUTE)
