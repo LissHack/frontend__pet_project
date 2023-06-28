@@ -1,5 +1,5 @@
 import React, {useContext, useState} from 'react';
-import {Container, Form, Table} from "react-bootstrap";
+import {Form, Table} from "react-bootstrap";
 import {observer} from "mobx-react-lite";
 import {PencilFill, Save, Trash, XSquare} from "react-bootstrap-icons";
 import {Context} from "../../index";
@@ -14,7 +14,7 @@ const UserItem = observer(({columns, rows, actions}) => {
 
     const editRow = (rowID) => {
         setIsEditMode(true);
-        // setEditedRow(undefined);
+        setEditedRow(undefined);
         setRowIDToEdit(rowID);
     }
 
@@ -25,9 +25,9 @@ const UserItem = observer(({columns, rows, actions}) => {
             [fieldName]: value
         })
     }
-
     const saveRowChanges = () => {
-        // setIsEditMode(false);
+
+        setIsEditMode(false);
         setRowsState(
             rowsState.map(row => {
                 if (row.id === editedRow.id) {
@@ -54,13 +54,13 @@ const UserItem = observer(({columns, rows, actions}) => {
                 return row
             })
         )
-
-        // setEditedRow(undefined)
+        setEditedRow(undefined)
     }
 
+
     const stopEdit = () => {
-        setIsEditMode(null);
-        // setEditedRow(undefined);
+        setIsEditMode(false);
+        setEditedRow(undefined);
     }
 
     const removeRow = (rowID) => {
@@ -68,115 +68,117 @@ const UserItem = observer(({columns, rows, actions}) => {
     }
 
     return (
-        <Container>
-            <Table striped bordered hover>
-                <thead>
-                <tr>
-                    {columns.map((column) => {
-                        return <th key={column.field}>{column.fieldName}</th>
-                    })}
-                </tr>
-                </thead>
-                <tbody>
-                {user.users.map(row => {
-                    return <tr key={row.id}>
 
-                        <td>
-                            {isEditMode && rowIDToEdit === row.id
-                                ? <Form.Control
-                                    type='text'
-                                    defaultValue={editedRow ? editedRow.name : row.name}
-                                    name='name'
-                                    onChange={e => onChangeField(e, row.id)}
-                                />
-                                : row.name
-                            }
-                        </td>
-                        <td>
-                            {isEditMode && rowIDToEdit === row.id
-                                ? <Form.Control
-                                    type='text'
-                                    defaultValue={editedRow ? editedRow.lastname : row.lastname}
-                                    name='lastName'
-                                    onChange={e => onChangeField(e, row.id)}
-                                />
-                                : row.lastname
-                            }
-                        </td>
-                        <td>
-                            {isEditMode && rowIDToEdit === row.id
-                                ? <Form.Control
-                                    type='text'
-                                    defaultValue={editedRow ? editedRow.middlename : row.middlename}
-                                    name='middlename'
-                                    onChange={e => onChangeField(e, row.id)}
-                                />
-                                : row.middlename
-                            }
-                        </td>
-                        <td>
-                            {isEditMode && rowIDToEdit === row.id
-                                ? <Form.Control
-                                    type='number'
-                                    defaultValue={editedRow ? editedRow.grade : row.grade}
-                                    name='grade'
-                                    onChange={(e) => onChangeField(e, row.id)}
-                                />
-                                : row.grade
-                            }
-                        </td>
-                        <td>
-                            {isEditMode && rowIDToEdit === row.id
-                                ? <Form.Control
-                                    type='text'
-                                    defaultValue={editedRow ? editedRow.email : row.email}
-                                    name='email'
-                                    onChange={(e) => onChangeField(e, row.id)}
-                                />
-                                : row.email
-                            }
-                        </td>
-                        <td>
-                            {isEditMode && rowIDToEdit === row.id
-                                ? <Form.Select onChange={e => onChangeField(e, row.id)} name="role"
-                                               defaultValue={row.role}>
-                                    <option value='Admin'>Admin</option>
-                                    <option value='Storage'>Storage</option>
-                                    <option value='User'>User</option>
-                                </Form.Select>
-                                : row.role
-                            }
-                        </td>
-                        {actions &&
-                            <td>
-                                {isEditMode && rowIDToEdit === row.id
-                                    ?
-                                    <button onClick={() => saveRowChanges()} className='custom-table__action-btn'
-                                            disabled={!editedRow}>
-                                        <Save/>
-                                    </button>
-                                    : <button onClick={() => editRow(row.id)} className='custom-table__action-btn'>
-                                        <PencilFill/>
-                                    </button>
-                                }
-
-                                {isEditMode && rowIDToEdit === row.id
-                                    ?
-                                    <button onClick={() => stopEdit()} className='custom-table__action-btn'>
-                                        <XSquare/>
-                                    </button>
-                                    : <button onClick={() => removeRow(row.id)}
-                                              className='custom-table__action-btn'>
-                                        <Trash/>
-                                    </button>
-                                }
-                            </td>
-                        }
-                    </tr>
+        <Table striped bordered hover>
+            <thead>
+            <tr>
+                {columns.map((column) => {
+                    return <th key={column.field}>{column.fieldName}</th>
                 })}
-                </tbody>
-            </Table>
-        </Container>
+            </tr>
+            </thead>
+            <tbody>
+            {user.users.map((row) => {
+                return <tr key={row.id}>
+                    <td>
+                        {row.id}
+                    </td>
+                    <td>
+                        {isEditMode && rowIDToEdit === row.id
+                            ? <Form.Control
+                                type='text'
+                                defaultValue={editedRow ? editedRow.name : row.name}
+                                name='name'
+                                onChange={(e) => onChangeField(e, row.id)}
+                            />
+                            : row.name
+                        }
+                    </td>
+                    <td>
+                        {isEditMode && rowIDToEdit === row.id
+                            ? <Form.Control
+                                type='text'
+                                defaultValue={editedRow ? editedRow.lastname : row.lastname}
+                                name='lastName'
+                                onChange={(e) => onChangeField(e, row.id)}
+                            />
+                            : row.lastname
+                        }
+                    </td>
+                    <td>
+                        {isEditMode && rowIDToEdit === row.id
+                            ? <Form.Control
+                                type='text'
+                                defaultValue={editedRow ? editedRow.middlename : row.middlename}
+                                name='middlename'
+                                onChange={(e) => onChangeField(e, row.id)}
+                            />
+                            : row.middlename
+                        }
+                    </td>
+                    <td>
+                        {isEditMode && rowIDToEdit === row.id
+                            ? <Form.Control
+                                type='number'
+                                defaultValue={editedRow ? editedRow.grade : row.grade}
+                                name='grade'
+                                onChange={(e) => onChangeField(e, row.id)}
+                            />
+                            : row.grade
+                        }
+                    </td>
+                    <td>
+                        {isEditMode && rowIDToEdit === row.id
+                            ? <Form.Control
+                                type='text'
+                                defaultValue={editedRow ? editedRow.email : row.email}
+                                name='email'
+                                onChange={(e) => onChangeField(e, row.id)}
+                            />
+                            : row.email
+                        }
+                    </td>
+                    <td>
+                        {isEditMode && rowIDToEdit === row.id
+                            ? <Form.Select onChange={e => onChangeField(e, row.id)} name="role"
+                                           defaultValue={row.role}>
+                                <option value='Admin'>Admin</option>
+                                <option value='Storage'>Storage</option>
+                                <option value='User'>User</option>
+                            </Form.Select>
+                            : row.role
+                        }
+                    </td>
+                    {actions &&
+                        <td>
+                            {isEditMode && rowIDToEdit === row.id
+                                ?
+                                <button onClick={() => saveRowChanges()} className='custom-table__action-btn'
+                                        disabled={!editedRow}>
+                                    <Save/>
+                                </button>
+                                : <button onClick={() => editRow(row.id)} className='custom-table__action-btn'>
+                                    <PencilFill/>
+                                </button>
+                            }
+
+                            {isEditMode && rowIDToEdit === row.id
+                                ?
+                                <button onClick={() => stopEdit()} className='custom-table__action-btn'>
+                                    <XSquare/>
+                                </button>
+                                : <button onClick={() => removeRow(row.id)}
+                                          className='custom-table__action-btn'>
+                                    <Trash/>
+                                </button>
+                            }
+                        </td>
+                    }
+                </tr>
+            })}
+            </tbody>
+        </Table>
+
     );
 });
 

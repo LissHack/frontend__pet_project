@@ -1,12 +1,10 @@
 import React, {useContext} from 'react';
-import {observer} from "mobx-react-lite";
 import {Context} from "../../index";
 import cl from "../DeviceComponent/DeviceItem.module.css";
-import UserItem from "./UserItem";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import UserItem from "./UserItem";
 
-
-const UserList = observer(() => {
+const UserList = () => {
     const {user} = useContext(Context)
     const columns = [
         {field: 'id', fieldName: '#'},
@@ -22,11 +20,11 @@ const UserList = observer(() => {
     return (
         <div>
             <form className={cl.content__device_list}>
-                <UserItem key={user.id} columns={columns} rows={user} actions/>
+                <UserItem columns={columns} rows={user} actions/>
             </form>
 
         </div>
     );
-});
+};
 
 export default UserList;

@@ -26,10 +26,10 @@ export const createUser = async (job) => {
     return data
 }
 
-export const fetchUsers = async (jobId, departmentId) => {
+export const fetchUsers = async (job_id, department_id) => {
     const {data} = await $host.get('api/user',{
         params: {
-            jobId, departmentId
+            job_id, department_id
         }
     })
     return data
