@@ -12,7 +12,7 @@ const NavbarStorage = observer(() => {
     const navigate = useNavigate()
 
     const logOut = ()=> {
-        user.setUser({})
+        user.setIsStorage({})
         user.setIsAuth(false)
         localStorage.removeItem('token')
     }
@@ -20,7 +20,7 @@ const NavbarStorage = observer(() => {
 
     return (
         <div className={cl.navbar}>
-            {user.isStorage ?
+            {user.isAuth ?
                 <Nav>
                     <MyButton onClick={() => navigate(STORAGE_ROUTE)}>
                         Назад

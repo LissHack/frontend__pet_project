@@ -12,7 +12,7 @@ const NavbarAdmin = observer(() => {
     const navigate = useNavigate()
 
     const logOut = () => {
-        user.setUser({})
+        user.setIsAdmin({})
         user.setIsAuth(false)
         localStorage.removeItem('token')
     }
@@ -20,7 +20,7 @@ const NavbarAdmin = observer(() => {
 
     return (
         <div className={cl.navbar}>
-            {user.isAdmin ?
+            {user.isAuth ?
                 <Nav>
                     <MyButton onClick={() => navigate(ADMIN_ROUTE)}>
                         Админ панель
