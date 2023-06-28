@@ -5,7 +5,7 @@ import {LOGIN_ROUTE} from "../utils/consts";
 import {Context} from "../index";
 
 const AppRouter = () => {
-    const {user, admin, storage} = useContext(Context)
+    const {user} = useContext(Context)
     return (
         <Routes>
             {user.isAuth && userRouters.map(({path, Component}) =>
@@ -15,14 +15,14 @@ const AppRouter = () => {
                     element={<Component/>}
                 />
             )}
-            {storage.isAuth && storageRouters.map(({path, Component}) =>
+            {user.isStorage && storageRouters.map(({path, Component}) =>
                 <Route
                     key={path}
                     path={path}
                     element={<Component/>}
                 />
             )}
-            {admin.isAuth && adminRouters.map(({path, Component}) =>
+            {user.isAdmin && adminRouters.map(({path, Component}) =>
                 <Route
                     key={path}
                     path={path}

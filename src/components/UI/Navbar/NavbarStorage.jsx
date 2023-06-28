@@ -8,19 +8,19 @@ import MyButton from "../MyButton/MyButton";
 import {observer} from "mobx-react-lite";
 
 const NavbarStorage = observer(() => {
-    const {storage} = useContext(Context)
+    const {user} = useContext(Context)
     const navigate = useNavigate()
 
     const logOut = ()=> {
-        storage.setStorage({})
-        storage.setIsAuth(false)
+        user.setUser({})
+        user.setIsAuth(false)
         localStorage.removeItem('token')
     }
 
 
     return (
         <div className={cl.navbar}>
-            {storage.isAuth ?
+            {user.isStorage ?
                 <Nav>
                     <MyButton onClick={() => navigate(STORAGE_ROUTE)}>
                         Назад

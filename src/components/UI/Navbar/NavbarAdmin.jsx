@@ -8,19 +8,19 @@ import MyButton from "../MyButton/MyButton";
 import {observer} from "mobx-react-lite";
 
 const NavbarAdmin = observer(() => {
-    const {admin} = useContext(Context)
+    const {user} = useContext(Context)
     const navigate = useNavigate()
 
     const logOut = () => {
-        admin.setAdmin({})
-        admin.setIsAuth(false)
+        user.setUser({})
+        user.setIsAuth(false)
         localStorage.removeItem('token')
     }
 
 
     return (
         <div className={cl.navbar}>
-            {admin.isAuth ?
+            {user.isAdmin ?
                 <Nav>
                     <MyButton onClick={() => navigate(ADMIN_ROUTE)}>
                         Админ панель
