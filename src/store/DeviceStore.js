@@ -38,6 +38,7 @@ export default class DeviceStore {
         this._selectedType = {}
         this._selectedBrand = {}
         this._selectedCondition = {}
+        this._orders = []
         this._page = 1
         this._totalCount = 0
         this._limit = 3
@@ -54,6 +55,10 @@ export default class DeviceStore {
 
     setDevices(devices) {
         this._devices = devices
+    }
+
+    setOrders(order) {
+        this._orders = order
     }
 
     setSelectedType(type) {
@@ -92,6 +97,10 @@ export default class DeviceStore {
 
     get devices() {
         return this._devices
+    }
+
+    get orders() {
+        return this._orders
     }
 
     get selectedType() {

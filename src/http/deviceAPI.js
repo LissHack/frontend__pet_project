@@ -47,3 +47,13 @@ export const fetchConditions = async () => {
     const {data} = await $host.get('api/condition')
     return data
 }
+
+export const addOrder = async (orderId) => {
+    const {response} = await $authHost.post('api/order', orderId)
+    return response
+}
+
+export const getOrder = async () => {
+    const {data} = await $authHost.get('api/order')
+    return data
+}
