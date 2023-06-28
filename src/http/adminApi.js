@@ -1,5 +1,4 @@
 import {$authHost, $host} from "./index";
-import jwt_decode from "jwt-decode"
 
 
 export const createDepartment = async (department) => {
@@ -23,12 +22,16 @@ export const fetchJobs = async () => {
 }
 
 export const createUser = async (job) => {
-    const {data} = await $authHost.post('api/job', job)
+    const {data} = await $authHost.post('api/user', job)
     return data
 }
 
-export const fetchUser = async () => {
-    const {data} = await $host.get('api/job')
+export const fetchUsers = async (jobId, departmentId) => {
+    const {data} = await $host.get('api/user',{
+        params: {
+            jobId, departmentId
+        }
+    })
     return data
 }
 
