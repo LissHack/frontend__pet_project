@@ -3,7 +3,7 @@ import {Context} from "../../../index";
 import {useNavigate} from "react-router-dom";
 import cl from './Navbar.module.css'
 import {ADMIN_ROUTE, LOGIN_ROUTE} from "../../../utils/consts";
-import {Button, Nav} from "react-bootstrap";
+import {Nav} from "react-bootstrap";
 import MyButton from "../MyButton/MyButton";
 import {observer} from "mobx-react-lite";
 
@@ -31,7 +31,7 @@ const NavbarAdmin = observer(() => {
                 </Nav>
                 :
                 <Nav>
-                    <Button onClick={() => navigate(LOGIN_ROUTE)}>Авторизация</Button>
+                    <MyButton onClick={() => navigate(LOGIN_ROUTE)}>Авторизация</MyButton>
                 </Nav>
             }
         </div>
