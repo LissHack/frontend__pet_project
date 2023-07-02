@@ -5,19 +5,12 @@ import {Context} from "../index";
 
 const UserProfile = observer(() => {
     const {user} = useContext(Context)
-
+    console.log(user)
     // const getUser = ()=> {
     //
     // }
 
-    if (user === user.id) {
-        console.log(
-            user.name,
-            user.lastname,
-        )
-    }
 
-    // console.log(user)
     return (
 
         <div className={cl.container__user}>

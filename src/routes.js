@@ -4,7 +4,7 @@ import {
     LOGIN_ROUTE,
     ORDER_ROUTE,
     REQUEST_ROUTE,
-    STORAGE_ROUTE, USER_PROFILE_ROUTE,
+    STORAGE_ROUTE,
     USER_ROUTE
 } from "./utils/consts";
 import Admin from "./pages/Admin";
@@ -14,16 +14,12 @@ import StoragePage from "./pages/StoragePage";
 import DevicePage from "./pages/DevicePage/DevicePage";
 import OrderPage from "./pages/OrderPage";
 import RequestPage from "./pages/RequestPage/RequestPage";
-import UserProfile from "./components/UserProfile";
+
 
 export const adminRouters = [
     {
         path: ADMIN_ROUTE,
         Component: Admin,
-    },
-    {
-        path: USER_PROFILE_ROUTE,
-        Component:UserProfile,
     },
 
 ]
