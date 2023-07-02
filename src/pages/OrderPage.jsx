@@ -1,8 +1,8 @@
 import React, {useContext, useEffect} from 'react';
-import NavbarStorage from "../../components/UI/Navbar/NavbarStorage";
+import NavbarStorage from "../components/UI/Navbar/NavbarStorage";
 import {observer} from "mobx-react-lite";
-import {Context} from "../../index";
-import {getOrder} from "../../http/deviceAPI";
+import {Context} from "../index";
+import {getOrder} from "../http/deviceAPI";
 
 const OrderPage = observer(() => {
     const {device} = useContext(Context)

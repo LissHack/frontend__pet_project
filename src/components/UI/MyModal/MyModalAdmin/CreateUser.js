@@ -95,10 +95,10 @@ const CreateUser = ({show, onHide}) => {
                         </Dropdown.Menu>
                     </Dropdown>
 
-                    <Dropdown>
+                    <Dropdown className={cl.modal__dropdown}>
                         <Dropdown.Toggle
                             className={cl.modal__dropdown_btn}>{user.selectedDepartment.name || 'Выберите должность'}</Dropdown.Toggle>
-                        <Dropdown.Menu>
+                        <Dropdown.Menu className={cl.modal__dropdown_content}>
                             {user.departments.map(department =>
                                 <Dropdown.Item
                                     onClick={() => user.setSelectedDepartment(department)}

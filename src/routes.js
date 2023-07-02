@@ -12,7 +12,7 @@ import User from "./pages/User";
 import Auth from "./pages/Auth/Auth";
 import StoragePage from "./pages/StoragePage";
 import DevicePage from "./pages/DevicePage/DevicePage";
-import OrderPage from "./pages/OrderPage/OrderPage";
+import OrderPage from "./pages/OrderPage";
 import RequestPage from "./pages/RequestPage/RequestPage";
 import UserProfile from "./components/UserProfile";
 

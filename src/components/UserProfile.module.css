@@ -1,0 +1,39 @@
+.container__user {
+    display: flex;
+}
+
+.card__form {
+    display: flex;
+    justify-content: center;
+}
+
+.image__form {
+    border-radius: 32px;
+    align-items: center;
+}
+
+
+.profile__form {
+    /*background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));*/
+    /*background: #eeeded;*/
+    backdrop-filter: blur(20px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 32px;
+    margin: 50px;
+    width: 300px;
+    height: 450px;
+    padding: 20px;
+
+}
+
+
+.device__form {
+    background: #eeeded;
+    margin-top: 50px;
+    width: 800px;
+    height: 450px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 32px;
+}
