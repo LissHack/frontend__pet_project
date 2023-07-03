@@ -34,13 +34,15 @@ const DevicesPage = observer(() => {
 
     return (
         <Form className={cl.form__device_page}>
-            <Card className={cl.card__btns}>
+            <Card className={cl.card__btn}>
                 <ConditionBar/>
                 <TypeBar/>
                 <BrandBar/>
             </Card>
             <Card className={cl.card__items}>
                 <DeviceList/>
+            </Card>
+            <Card className={cl.card__pages}>
                 <Pages/>
             </Card>
         </Form>

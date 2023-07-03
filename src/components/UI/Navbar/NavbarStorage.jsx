@@ -3,7 +3,7 @@ import {Context} from "../../../index";
 import {useNavigate} from "react-router-dom";
 import cl from './Navbar.module.css'
 import {LOGIN_ROUTE, ORDER_ROUTE, STORAGE_ROUTE} from "../../../utils/consts";
-import {Nav} from "react-bootstrap";
+
 import MyButton from "../MyButton/MyButton";
 import {observer} from "mobx-react-lite";
 
@@ -21,7 +21,7 @@ const NavbarStorage = observer(() => {
     return (
         <div className={cl.navbar}>
             {user.isAuth ?
-                <Nav>
+                <nav>
                     <MyButton onClick={() => navigate(STORAGE_ROUTE)}>
                         Назад
                     </MyButton>
@@ -33,11 +33,11 @@ const NavbarStorage = observer(() => {
                     >
                         Выйти
                     </MyButton>
-                </Nav>
+                </nav>
                 :
-                <Nav>
+                <nav>
                     <MyButton onClick={() => navigate(LOGIN_ROUTE)}>Авторизация</MyButton>
-                </Nav>
+                </nav>
             }
         </div>
     );

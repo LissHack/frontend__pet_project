@@ -1,10 +1,30 @@
-.container__device_page {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    width: 500px;
-}
+/*.container__device_page {*/
+/*    display: flex;*/
+/*    justify-content: flex-end;*/
+/*    align-items: center;*/
+/*    width: 500px;*/
+/*}*/
 
 .form__device_page {
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+    height: 700px;
+    background-color: #5c5c5c;
+    border-radius: 30px;
+}
+
+.card__btn {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.card__items {
+
+
+}
+
+.card__pages {
 
 }

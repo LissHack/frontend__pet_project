@@ -1,5 +1,5 @@
 .menu{
-    position: fixed;
+    position: absolute;
     width: 180px;
     height: 100%;
     color: #3d3d3d;

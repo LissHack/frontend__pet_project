@@ -14,13 +14,13 @@ const DeviceItem = ({device}) => {
         >
             <form className={cl.card__device_list}>
                 <div className={cl.card_name}>
-                    <div>
-                        {device.name}
-                    </div>
                     <Image
                         className={cl.image__device_list}
                         src={process.env.REACT_APP_API_URL + device.img}
                     />
+                     <div>
+                        {device.name}
+                    </div>
                     <div>{device.state_at}</div>
                 </div>
             </form>

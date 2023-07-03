@@ -4,7 +4,7 @@ import CreateType from "../UI/MyModal/MyModalStorage/CreateType";
 import CreateBrand from "../UI/MyModal/MyModalStorage/CreateBrands";
 import CreateDevice from "../UI/MyModal/MyModalStorage/CreateDevice";
 // import {Container} from "react-bootstrap";
-
+import cl from './DeviceItem.module.css'
 
 const StorageMenu = () => {
     const [typeVisible, setTypeVisible] = useState(false)
@@ -12,7 +12,7 @@ const StorageMenu = () => {
     const [deviceVisible, setDeviceVisible] = useState(false)
 
     return (
-        <div>
+        <div className={cl.storage__menu_btn}>
             <MyButton
                 onClick={() => setTypeVisible(true)}
             >

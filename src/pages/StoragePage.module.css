@@ -1,14 +1,12 @@
 .container__stor_page {
-
+    margin: 0;
+    padding: 0;
 }
 
 .content__stor_page {
-
+    background-color: #707070;
 }
 
-.nav__stor_page {
-
-}
 
 .menu__stor_page {
 
@@ -16,15 +14,12 @@
 
 .form__stor_page {
     display: flex;
-    background-color: #5c5c5c;
-    width: 500px;
-    height: 500px;
-    border: 3px solid gray;
-    border-radius: 30px;
+    margin-left: 180px;
+
 }
 
 .form__menu {
-    padding: 50px 200px;
+    padding: 30px 50px;
     float: left;
 }
 

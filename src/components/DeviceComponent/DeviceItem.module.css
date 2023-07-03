@@ -3,17 +3,25 @@
     justify-content: space-around;
     flex-wrap: wrap;
     margin-top: 20px;
-    padding-right: 20px;
+    padding-right: 30px;
+
+    /*border: 3px solid;*/
+    border-radius: 20px;
+    background-color: #1fffe5;
 }
 
 .card_name {
-    padding-bottom: 8px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
     text-align: center;
+    padding: 5px;
 }
 
 .card__device_list {
-    width: 90%;
-    height: 90%;
+    width: 80%;
+    height: 80%;
     cursor: pointer;
     border: #4f4f4f;
 }
@@ -21,6 +29,17 @@
 .image__device_list {
     width: 150px;
     height: 150px;
+}
+
+.storage__menu_btn{
+    display: flex;
+
+}
+
+.row__device_list {
+    margin: 50px 30px 0 0 ;
+    border: 2px solid;
+    border-radius: 30px;
 }
 
 /*.card__btn {*/

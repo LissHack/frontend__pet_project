@@ -3,13 +3,14 @@ import {observer} from "mobx-react-lite";
 import {Context} from "../../index";
 import {Row} from "react-bootstrap";
 import DeviceItem from "./DeviceItem";
+import cl from './DeviceItem.module.css'
 
 const DeviceList = observer(() => {
     const {device} = useContext(Context)
     return (
-        <Row>
+        <Row className={cl.row__device_list}>
             {device.devices.map(device =>
-                 <DeviceItem key={device.id} device={device}/>
+                <DeviceItem key={device.id} device={device}/>
             )}
         </Row>
     );

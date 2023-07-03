@@ -8,7 +8,6 @@ const MenuList = () => {
                 <a href="#">Home</a>
                 <a href="#">Order</a>
                 <a href="#">Orders</a>
-
                 <span/>
             </div>
         </div>
