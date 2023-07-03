@@ -1,0 +1,10 @@
+.container__device_page {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 500px;
+}
+
+.form__device_page {
+
+}
