@@ -1,11 +1,16 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect} from 'react';
 import {observer} from "mobx-react-lite";
 import {Context} from "../../index";
 import cl from './BrandBar.module.css'
 import {Dropdown} from "react-bootstrap";
+import {fetchBrands} from "../../http/deviceAPI";
 
 const BrandBar = observer(() => {
     const {device} = useContext(Context)
+
+    useEffect(() => {
+        fetchBrands().then(data => device.setBrands(data))
+    }, [])
 
     return (
         <Dropdown className={cl.dropdown}>
