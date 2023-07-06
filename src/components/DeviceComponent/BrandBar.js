@@ -4,6 +4,7 @@ import {Context} from "../../index";
 import cl from './BrandBar.module.css'
 import {Dropdown} from "react-bootstrap";
 import {fetchBrands} from "../../http/deviceAPI";
+import Form from "react-bootstrap/Form";
 
 const BrandBar = observer(() => {
     const {device} = useContext(Context)
@@ -13,22 +14,25 @@ const BrandBar = observer(() => {
     }, [])
 
     return (
-        <Dropdown className={cl.dropdown}>
-            <Dropdown.Toggle className={cl.dropdown_btn}>
-                Бренд
-            </Dropdown.Toggle>
-            <Dropdown.Menu className={cl.dropdown_content}>
-                {device.brands.map(brand =>
-                    <Dropdown.Item
-                        className={cl.dropdown__condition}
-                        key={brand.id}
-                        onClick={() => device.setSelectedBrand(brand)}
-                    >
-                        {brand.name}
-                    </Dropdown.Item>
-                )}
-            </Dropdown.Menu>
-        </Dropdown>
+        <Form>
+            <Dropdown className={cl.dropdown}>
+                <Dropdown.Toggle className={cl.dropdown_btn}>
+                    Бренд
+                </Dropdown.Toggle>
+                <Dropdown.Menu className={cl.dropdown_content}>
+                    {device.brands.map(brand =>
+                        <Dropdown.Item
+                            className={cl.dropdown__condition}
+                            key={brand.id}
+                            onClick={() => device.setSelectedBrand(brand)}
+                        >
+                            {brand.name}
+                        </Dropdown.Item>
+                    )}
+                </Dropdown.Menu>
+            </Dropdown>
+        </Form>
+
 
     );
 });

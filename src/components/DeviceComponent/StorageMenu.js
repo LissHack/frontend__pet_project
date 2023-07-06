@@ -1,11 +1,9 @@
 import React, {useState} from 'react';
-import MyButton from "../UI/MyButton/MyButton";
 import CreateType from "../UI/MyModal/MyModalStorage/CreateType";
 import CreateBrand from "../UI/MyModal/MyModalStorage/CreateBrands";
 import CreateDevice from "../UI/MyModal/MyModalStorage/CreateDevice";
-// import cl from './DeviceItem.module.css'
 import {Container} from "react-bootstrap";
-
+import cl from './BrandBar.module.css'
 
 const StorageMenu = () => {
     const [typeVisible, setTypeVisible] = useState(false)
@@ -13,27 +11,26 @@ const StorageMenu = () => {
     const [deviceVisible, setDeviceVisible] = useState(false)
 
     return (
-        <Container>
+        <Container className={cl.container_bar}>
+            <button className={cl.bar_btn}
+                onClick={() => setTypeVisible(true)}
+            >
+                Добавить тип
+            </button>
+            <button className={cl.bar_btn}
+                onClick={() => setBrandVisible(true)}
+            >
+                Добавить бренд
+            </button>
+            <button className={cl.bar_btn}
+                onClick={() => setDeviceVisible(true)}
+            >
+                Добавить устройство
+            </button>
 
-                <MyButton
-                    onClick={() => setTypeVisible(true)}
-                >
-                    Добавить тип
-                </MyButton>
-                <MyButton
-                    onClick={() => setBrandVisible(true)}
-                >
-                    Добавить бренд
-                </MyButton>
-                <MyButton
-                    onClick={() => setDeviceVisible(true)}
-                >
-                    Добавить устройство
-                </MyButton>
-
-                <CreateType show={typeVisible} onHide={() => setTypeVisible(false)}/>
-                <CreateBrand show={brandVisible} onHide={() => setBrandVisible(false)}/>
-                <CreateDevice show={deviceVisible} onHide={() => setDeviceVisible(false)}/>
+            <CreateType show={typeVisible} onHide={() => setTypeVisible(false)}/>
+            <CreateBrand show={brandVisible} onHide={() => setBrandVisible(false)}/>
+            <CreateDevice show={deviceVisible} onHide={() => setDeviceVisible(false)}/>
 
         </Container>
     );

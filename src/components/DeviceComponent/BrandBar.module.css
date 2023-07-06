@@ -1,3 +1,21 @@
+.container_bar {
+    display: flex;
+    margin-bottom: 20px;
+    padding-left: 10px;
+}
+
+.bar_btn {
+    padding: 11px 13px;
+    color: white;
+    font-size: 14px;
+    border: 2px solid #4f4f4f;
+    cursor: pointer;
+    border-radius: 13px;
+    outline: #4f4f4f;
+    margin-right: 4px;
+    background-color: #4f4f4f;
+}
+
 .content__brand {
     padding-top: 18px;
     display: flex;
@@ -60,10 +78,8 @@
     border-radius: 13px;
     margin-top: 30px;
     box-shadow: 0 1px 2px 0 rgba(0, 255, 255, 0.7),
-        1px 1px 4px 0 rgba(0, 255, 255, 0.7),
-        /*2px 4px 8px 0 rgba(0, 255, 255, 0.7),*/
-        2px 4px 10px 0 rgba(0, 255, 255, 0.7);
-
+    1px 1px 4px 0 rgba(0, 255, 255, 0.7),
+        /*2px 4px 8px 0 rgba(0, 255, 255, 0.7),*/ 2px 4px 10px 0 rgba(0, 255, 255, 0.7);
 
 
 }
@@ -103,3 +119,4 @@
     background-color: #00FFFFB2;
     color: #3d3d3d;
 }
+

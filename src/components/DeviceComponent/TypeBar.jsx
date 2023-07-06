@@ -4,6 +4,7 @@ import {Context} from "../../index";
 import {Dropdown} from "react-bootstrap";
 import cl from "./BrandBar.module.css";
 import {fetchTypes} from "../../http/deviceAPI";
+import Form from "react-bootstrap/Form";
 
 const TypeBar = observer(() => {
     const {device} = useContext(Context)
@@ -13,22 +14,25 @@ const TypeBar = observer(() => {
     }, [])
 
     return (
-        <Dropdown className={cl.dropdown}>
-            <Dropdown.Toggle className={cl.dropdown_btn}>
-                Тип
-            </Dropdown.Toggle>
-            <Dropdown.Menu className={cl.dropdown_content}>
-                {device.types.map(type =>
-                    <Dropdown.Item
-                        className={cl.dropdown__condition}
-                        key={type.id}
-                        onClick={() => device.setSelectedType(type)}
-                    >
-                        {type.name}
-                    </Dropdown.Item>
-                )}
-            </Dropdown.Menu>
-        </Dropdown>
+        <Form>
+            <Dropdown className={cl.dropdown}>
+                <Dropdown.Toggle className={cl.dropdown_btn}>
+                    Тип
+                </Dropdown.Toggle>
+                <Dropdown.Menu className={cl.dropdown_content}>
+                    {device.types.map(type =>
+                        <Dropdown.Item
+                            className={cl.dropdown__condition}
+                            key={type.id}
+                            onClick={() => device.setSelectedType(type)}
+                        >
+                            {type.name}
+                        </Dropdown.Item>
+                    )}
+                </Dropdown.Menu>
+            </Dropdown>
+        </Form>
+
     );
 });
 
