@@ -8,21 +8,18 @@ const DeviceItem = ({device}) => {
     const navigate = useNavigate()
 
     return (
-        <div
-            className={cl.content__device_list}
+        <div className={cl.content__device_list}
             onClick={() => navigate(DEVICE_ROUTE + '/' + device.id)}
         >
             <form className={cl.card__device_list}>
-                <div className={cl.card_name}>
                     <Image
                         className={cl.image__device_list}
                         src={process.env.REACT_APP_API_URL + device.img}
                     />
-                     <div>
+                     <div className={cl.card_name}>
                         {device.name}
                     </div>
                     <div>{device.state_at}</div>
-                </div>
             </form>
         </div>
 

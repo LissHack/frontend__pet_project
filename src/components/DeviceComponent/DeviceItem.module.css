@@ -1,11 +1,11 @@
 .content__device_list {
+    height: 200px;
+    width: 200px;
     display: inline-grid;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
-    margin-top: 20px;
-    /*padding-right: 30px;*/
-
-    /*border: 3px solid;*/
+    margin-right: 20px;
+    padding-top: 20px;
     border-radius: 20px;
     background-color: #1fffe5;
 }
@@ -27,17 +27,22 @@
 }
 
 .image__device_list {
-    width: 150px;
-    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 130px;
+    height: 130px;
 }
 
-/*.storage__menu_btn {*/
-/*    display: flex;*/
-
-/*}*/
 
 .row__device_list {
-    margin: 50px 30px 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 20px 20px;
+    margin: 30px;
     border: 2px solid;
     border-radius: 30px;
 }

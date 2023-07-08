@@ -7,12 +7,11 @@
 
 .form__device_page {
     display: flex;
+    align-content: stretch;
     flex-direction: column;
     width: 800px;
     height: 700px;
-    /*background-color: #5c5c5c;*/
-    background-color: rgb(42, 42, 42);
-
+    background-color: #5c5c5c;
     border-radius: 30px;
 }
 
