@@ -19,7 +19,7 @@ const NavbarStorage = observer(() => {
 
 
     return (
-        <div className={cl.navbar}>
+        <div>
             {user.isAuth ?
                 <nav>
                     <MyButton onClick={() => navigate(STORAGE_ROUTE)}>

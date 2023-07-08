@@ -6,17 +6,16 @@ import DevicesPage from "./DevicesPage";
 import cl from './StoragePage.module.css'
 import NavbarStorage from "../components/UI/Navbar/NavbarStorage";
 
-
 const StoragePage = observer(() => {
 
     return (
         <div className={cl.container__stor_page}>
             <div className={cl.content__stor_page}>
-                <div>
+                <div className={cl.navbar}>
                     <NavbarStorage/>
                     <hr style={{border: "solid" , color: "#5c5c5c"}}/>
                 </div>
-                <div>
+                <div className={cl.menu__stor_page}>
                     <MenuList/>
                 </div>
                 <form className={cl.form__stor_page}>
