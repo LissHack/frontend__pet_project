@@ -13,8 +13,8 @@ const StoragePage = observer(() => {
             <div className={cl.content__stor_page}>
                 <div className={cl.navbar}>
                     <NavbarStorage/>
-                    <hr style={{border: "solid" , color: "#5c5c5c"}}/>
                 </div>
+                <hr className={cl.hr}/>
                 <div className={cl.menu__stor_page}>
                     <MenuList/>
                 </div>

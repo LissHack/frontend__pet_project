@@ -5,7 +5,7 @@
 
 .content__stor_page {
     /*display: flex;*/
-    background-color: #707070;
+    background-color: #eae9e9;
 }
 
 
@@ -31,10 +31,18 @@
 
 .navbar {
     display: flex;
-    background-color: #4f4f4f;
+    background-color: #ffffff;
     height: 70px;
     width: 100%;
     justify-content: flex-end;
     align-items: center;
     padding-right: 10px;
+}
+
+.hr {
+    display: flex;
+    /*margin-top: 10px;*/
+    width: 100%;
+    border: solid 1px;
+    color: #bdbdbd;
 }
