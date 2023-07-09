@@ -12,6 +12,7 @@ const StoragePage = observer(() => {
         <div className={cl.container__stor_page}>
             <div className={cl.content__stor_page}>
                 <div className={cl.navbar}>
+                    <StorageMenu/>
                     <NavbarStorage/>
                 </div>
                 <hr className={cl.hr}/>
@@ -20,7 +21,7 @@ const StoragePage = observer(() => {
                 </div>
                 <form className={cl.form__stor_page}>
                     <div className={cl.form__menu}>
-                        <StorageMenu/>
+                        {/*<StorageMenu/>*/}
                         <DevicesPage/>
                     </div>
                     {/*<div className={cl.form__device}>*/}
