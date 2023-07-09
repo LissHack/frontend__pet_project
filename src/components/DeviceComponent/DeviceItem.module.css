@@ -24,6 +24,7 @@
     height: 80%;
     cursor: pointer;
     border: #4f4f4f;
+
 }
 
 .image__device_list {
@@ -40,11 +41,15 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    height: 550px;
+    width: 90%;
     padding: 20px 20px;
     margin: 30px;
-    border: 2px solid;
     border-radius: 30px;
+    background-color: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(80px);
 }
 
 /*.card__btn_content {*/

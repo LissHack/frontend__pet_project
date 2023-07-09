@@ -1,12 +1,10 @@
 import React, {useContext, useEffect} from 'react';
-import {Card} from "react-bootstrap";
 import DeviceList from "../components/DeviceComponent/DeviceList";
 import BrandBar from "../components/DeviceComponent/BrandBar";
 import Pages from "../components/Pages";
 import {observer} from "mobx-react-lite";
 import {Context} from "../index";
 import {fetchBrands, fetchConditions, fetchDevices, fetchTypes} from "../http/deviceAPI";
-import Form from "react-bootstrap/Form";
 import ConditionBar from "../components/DeviceComponent/ConditionBar";
 import TypeBar from "../components/DeviceComponent/TypeBar";
 import cl from "./DevicesPage.module.css";
@@ -33,19 +31,23 @@ const DevicesPage = observer(() => {
 
 
     return (
-        <Form className={cl.form__device_page}>
-            <Card className={cl.card__btn}>
-                <ConditionBar/>
-                <TypeBar/>
-                <BrandBar/>
-            </Card>
-            <Card className={cl.card__items}>
-                <DeviceList/>
-            </Card>
-            <Card className={cl.card__pages}>
-                <Pages/>
-            </Card>
-        </Form>
+        <div className={cl.container__device_page}>
+            <div className={cl.card__bar}>
+                <div className={cl.card__btn}>
+                    <ConditionBar/>
+                    <TypeBar/>
+                    <BrandBar/>
+                </div>
+            </div>
+            <div className={cl.card__devices}>
+                <div className={cl.card__items}>
+                    <DeviceList/>
+                </div>
+                <div className={cl.card__pages}>
+                    <Pages/>
+                </div>
+            </div>
+        </div>
     );
 });
 

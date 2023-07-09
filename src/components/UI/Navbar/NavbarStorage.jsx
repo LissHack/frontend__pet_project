@@ -27,11 +27,11 @@ const NavbarStorage = observer(() => {
                         onClick={() => navigate(STORAGE_ROUTE)}>
                         Назад
                     </MyButton>
-                    <MyButton
-                        className={cl.navbar_btn}
-                        onClick={() => navigate(ORDER_ROUTE)}>
-                        Заказы
-                    </MyButton>
+                    {/*<MyButton*/}
+                    {/*    className={cl.navbar_btn}*/}
+                    {/*    onClick={() => navigate(ORDER_ROUTE)}>*/}
+                    {/*    Заказы*/}
+                    {/*</MyButton>*/}
                     <MyButton
                         className={cl.navbar_btn}
                         onClick={() => logOut()}

@@ -84,7 +84,7 @@
 }
 
 .sidebar a:hover:not(.active) {
-    background-color: #555;
+    background-color: #8d8d8d;
     color: white;
     border-radius: 15px;
 }

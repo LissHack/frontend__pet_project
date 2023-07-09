@@ -22,7 +22,8 @@
 
 .form__menu {
     padding: 30px 50px;
-    float: left;
+    /*float: left;*/
+    margin-left: 180px;
 }
 
 .form__device {
