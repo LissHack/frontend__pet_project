@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import CreateType from "../UI/MyModal/MyModalStorage/CreateType";
 import CreateBrand from "../UI/MyModal/MyModalStorage/CreateBrands";
 import CreateDevice from "../UI/MyModal/MyModalStorage/CreateDevice";
-import {Container} from "react-bootstrap";
 import cl from './BrandBar.module.css'
 
 const StorageMenu = () => {
@@ -11,28 +10,31 @@ const StorageMenu = () => {
     const [deviceVisible, setDeviceVisible] = useState(false)
 
     return (
-        <Container className={cl.container_bar}>
-            <button className={cl.bar_btn}
-                onClick={() => setTypeVisible(true)}
-            >
-                Добавить тип
-            </button>
-            <button className={cl.bar_btn}
-                onClick={() => setBrandVisible(true)}
-            >
-                Добавить бренд
-            </button>
-            <button className={cl.bar_btn}
-                onClick={() => setDeviceVisible(true)}
-            >
-                Добавить устройство
-            </button>
-
+        <div className={cl.nav}>
+            <input type="checkbox"/>
+            <span></span>
+            <span></span>
+            <div className={cl.menu}>
+                <button className={cl.link}
+                        onClick={() => setTypeVisible(true)}
+                >
+                    Добавить тип
+                </button>
+                <button className={cl.link}
+                        onClick={() => setBrandVisible(true)}
+                >
+                    Добавить бренд
+                </button>
+                <button className={cl.link}
+                        onClick={() => setDeviceVisible(true)}
+                >
+                    Добавить устройство
+                </button>
+            </div>
             <CreateType show={typeVisible} onHide={() => setTypeVisible(false)}/>
             <CreateBrand show={brandVisible} onHide={() => setBrandVisible(false)}/>
             <CreateDevice show={deviceVisible} onHide={() => setDeviceVisible(false)}/>
-
-        </Container>
+        </div>
     );
 };
 

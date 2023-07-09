@@ -1,9 +1,28 @@
 .navbar {
     display: flex;
-    background-color: #4f4f4f;
+    background-color: #fff;
     height: 70px;
     width: auto;
     justify-content: flex-end;
     align-items: center;
-    padding-right: 10px;
+    padding-left: 15px;
+}
+
+
+.navbar_btn {
+    padding: 11px 13px;
+    color: #343434;
+    font-size: 14px;
+    border: 2px solid #f3f3f3;
+    cursor: pointer;
+    border-radius: 13px;
+    outline: #4f4f4f;
+    margin-right: 4px;
+    background-color: #ffffff;
+}
+
+.navbar_btn:hover {
+    color: #4f4f4f;
+    border: 2px solid #e1e1e1;
+    background-color: white;
 }

@@ -11,7 +11,7 @@ const NavbarStorage = observer(() => {
     const {user} = useContext(Context)
     const navigate = useNavigate()
 
-    const logOut = ()=> {
+    const logOut = () => {
         user.setIsStorage({})
         user.setIsAuth(false)
         localStorage.removeItem('token')
@@ -22,13 +22,18 @@ const NavbarStorage = observer(() => {
         <div className={cl.navbar}>
             {user.isAuth ?
                 <nav>
-                    <MyButton onClick={() => navigate(STORAGE_ROUTE)}>
+                    <MyButton
+                        className={cl.navbar_btn}
+                        onClick={() => navigate(STORAGE_ROUTE)}>
                         Назад
                     </MyButton>
-                    <MyButton onClick={() => navigate(ORDER_ROUTE)}>
+                    <MyButton
+                        className={cl.navbar_btn}
+                        onClick={() => navigate(ORDER_ROUTE)}>
                         Заказы
                     </MyButton>
                     <MyButton
+                        className={cl.navbar_btn}
                         onClick={() => logOut()}
                     >
                         Выйти

@@ -4,12 +4,14 @@
 }
 
 .content__stor_page {
-    background-color: #707070;
+    /*display: flex;*/
+    background-color: #eae9e9;
 }
 
 
 .menu__stor_page {
-
+    display: flex;
+    padding-left: 0;
 }
 
 .form__stor_page {
@@ -25,4 +27,22 @@
 
 .form__device {
 
+}
+
+.navbar {
+    display: flex;
+    background-color: #ffffff;
+    height: 70px;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 10px;
+}
+
+.hr {
+    display: flex;
+    /*margin-top: 10px;*/
+    width: 100%;
+    border: solid 1px;
+    color: #dedede;
 }
