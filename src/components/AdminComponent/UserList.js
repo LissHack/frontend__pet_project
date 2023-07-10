@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import {Context} from "../../index";
-import cl from "../DeviceComponent/DeviceItem.module.css";
-// import 'bootstrap/dist/css/bootstrap.min.css';
+import cl from "./UserItem.module.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import UserItem from "./UserItem";
 
 const UserList = () => {
@@ -19,7 +19,7 @@ const UserList = () => {
 
     return (
         <div>
-            <form className={cl.content__device_list}>
+            <form className={cl.content__admin_list}>
                 <UserItem columns={columns} rows={user} actions/>
             </form>
 

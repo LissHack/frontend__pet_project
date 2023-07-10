@@ -29,9 +29,13 @@
 }
 
 .form__menu {
+    display: flex;
+    justify-content: center;
     padding: 30px 50px;
-    /*float: left;*/
-    margin-left: 180px;
+    /* float: left; */
+    /*margin-left: 180px;*/
+    margin-left: 130px;
+    align-items: center;
 }
 
 .form__device {

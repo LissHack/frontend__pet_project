@@ -7,10 +7,10 @@ import {
     STORAGE_ROUTE,
     USER_ROUTE
 } from "./utils/consts";
-import Admin from "./pages/Admin";
+import Admin from "./pages/Admin/Admin";
 import User from "./pages/User";
 import Auth from "./pages/Auth/Auth";
-import StoragePage from "./pages/StoragePage";
+import StoragePage from "./pages/StoragePage/StoragePage";
 import DevicePage from "./pages/DevicePage/DevicePage";
 import OrderPage from "./pages/OrderPage";
 import RequestPage from "./pages/RequestPage/RequestPage";

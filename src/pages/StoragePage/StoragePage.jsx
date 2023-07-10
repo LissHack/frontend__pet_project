@@ -1,10 +1,10 @@
 import React from 'react';
-import StorageMenu from "../components/DeviceComponent/StorageMenu";
+import StorageMenu from "../../components/DeviceComponent/StorageMenu";
 import {observer} from "mobx-react-lite";
-import MenuListStorage from "../components/UI/menu/MenuListStorage";
-import DevicesPage from "./DevicesPage";
+import MenuListStorage from "../../components/UI/menu/MenuListStorage";
+import DevicesPage from "../DevicesPage";
 import cl from './StoragePage.module.css'
-import NavbarStorage from "../components/UI/Navbar/NavbarStorage";
+import NavbarStorage from "../../components/UI/Navbar/NavbarStorage";
 
 
 const StoragePage = observer(() => {

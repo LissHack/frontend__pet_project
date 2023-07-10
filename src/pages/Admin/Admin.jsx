@@ -1,12 +1,12 @@
 import React, {useContext, useEffect} from 'react';
-import NavbarAdmin from "../components/UI/Navbar/NavbarAdmin";
-import AdminMenu from "../components/AdminComponent/AdminMenu";
-import DepartmentBar from "../components/AdminComponent/DepartmentBar";
-import cl from "./StoragePage.module.css";
-import UserList from "../components/AdminComponent/UserList";
+import NavbarAdmin from "../../components/UI/Navbar/NavbarAdmin";
+import AdminMenu from "../../components/AdminComponent/AdminMenu";
+import cl from "./Admin.module.css";
+import UserList from "../../components/AdminComponent/UserList";
 import {observer} from "mobx-react-lite";
-import {Context} from "../index";
-import {fetchDepartments, fetchJobs, fetchUsers} from "../http/adminApi";
+import {Context} from "../../index";
+import {fetchDepartments, fetchJobs, fetchUsers} from "../../http/adminApi";
+import MenuListAdmin from "../../components/UI/menu/MenuListAdmin";
 
 const Admin = observer(() => {
     const {user} = useContext(Context)
@@ -26,18 +26,18 @@ const Admin = observer(() => {
     }, [user.selectedJob, user.selectedDepartment])
 
     return (
-        <div className={cl.container__stor_page}>
+        <div className={cl.container__admin_page}>
 
-            <div className={cl.content__stor_page}>
-                <div className={cl.storage__navbar}>
+            <div className={cl.content__admin_page}>
+                <div className={cl.admin__navbar}>
                     <AdminMenu/>
                     <NavbarAdmin/>
                 </div>
                 <hr className={cl.hr}/>
-                <div className={cl.menu__stor_page}>
-                    <DepartmentBar/>
+                <div className={cl.menu__admin_page}>
+                    <MenuListAdmin/>
                 </div>
-                <div className={cl.form__menu}>
+                <div className={cl.form__user_list}>
                     <UserList/>
                 </div>
             </div>

@@ -3,7 +3,7 @@ import NavbarStorage from "../components/UI/Navbar/NavbarStorage";
 import {observer} from "mobx-react-lite";
 import {Context} from "../index";
 import {getOrder} from "../http/deviceAPI";
-import cl from "./StoragePage.module.css";
+import cl from "./StoragePage/StoragePage.module.css";
 import MenuListStorage from "../components/UI/menu/MenuListStorage";
 
 const OrderPage = observer(() => {

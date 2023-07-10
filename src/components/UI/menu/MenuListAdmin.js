@@ -1,24 +1,25 @@
-import React from 'react';
+import React, {useState} from 'react';
 import cl from "./MenuList.module.css";
+import {observer} from "mobx-react-lite";
 
-const MenuListAdmin = () => {
-   const [startAnimate, setStartAnimate] = React.useState(false);
-    const [highlightTopPosition, setStateHighlightTopPosition] = React.useState(0);
-    const [currCount, setCurrCount] = React.useState(0);
+const MenuListAdmin = observer(() => {
+    const [useAnimate, setUseAnimate] = useState(false);
+    const [highlightTopPosition, setStateHighlightTopPosition] = useState(0);
+    const [currCount, setCurrCount] = useState(0);
 
     const onClickTab = (count) => {
-        setStartAnimate(false);
+        setUseAnimate(false);
         setCurrCount(count);
         setStateHighlightTopPosition(count * 52);
 
         setTimeout(() => {
-            setStartAnimate(true);
+            setUseAnimate(true);
         }, 100);
     };
 
     React.useEffect(() => {
         setTimeout(() => {
-            setStartAnimate(true);
+            setUseAnimate(true);
         }, 500);
 
         return () => {
@@ -31,12 +32,12 @@ const MenuListAdmin = () => {
                 <div
                     style={{top: `${highlightTopPosition}px`}}
                     className={`cl.sidebar__highlight ${
-                        startAnimate && "cl.sidebar__highlight__animate"
+                        useAnimate && "cl.sidebar__highlight__animate"
                     }`}
                 ></div>
                 <a
                     className={currCount === 0 && cl.active}
-                    href="/storage"
+                    href="/Admin/Admin"
                     onClick={() => onClickTab(0)}
                 >
           <span className={currCount === 0 && 'cl.text-active'}>
@@ -54,7 +55,7 @@ const MenuListAdmin = () => {
                 </a>
                 <a
                     className={currCount === 2 && cl.active}
-                    href="/order/"
+                    href="#"
                     onClick={() => onClickTab(2)}
                 >
           <span className={currCount === 2 && 'cl.text-active'}>
@@ -65,6 +66,6 @@ const MenuListAdmin = () => {
             </div>
         </div>
     );
-};
+});
 
 export default MenuListAdmin;

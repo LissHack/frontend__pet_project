@@ -3,6 +3,7 @@ import {Form, Table} from "react-bootstrap";
 import {observer} from "mobx-react-lite";
 import {PencilFill, Save, Trash, XSquare} from "react-bootstrap-icons";
 import {Context} from "../../index";
+import cl from './UserItem.module.css'
 
 
 const UserItem = observer(({columns, rows, actions}) => {
@@ -86,6 +87,7 @@ const UserItem = observer(({columns, rows, actions}) => {
                     <td>
                         {isEditMode && rowIDToEdit === row.id
                             ? <Form.Control
+
                                 type='text'
                                 defaultValue={editedRow ? editedRow.name : row.name}
                                 name='name'
@@ -97,6 +99,7 @@ const UserItem = observer(({columns, rows, actions}) => {
                     <td>
                         {isEditMode && rowIDToEdit === row.id
                             ? <Form.Control
+                                className={cl.input_item}
                                 type='text'
                                 defaultValue={editedRow ? editedRow.lastname : row.lastname}
                                 name='lastName'
@@ -140,8 +143,10 @@ const UserItem = observer(({columns, rows, actions}) => {
                     </td>
                     <td>
                         {isEditMode && rowIDToEdit === row.id
-                            ? <Form.Select onChange={e => onChangeField(e, row.id)} name="role"
-                                           defaultValue={row.role}>
+                            ? <Form.Select
+                                onChange={e => onChangeField(e, row.id)}
+                                name="role"
+                                defaultValue={row.role}>
                                 <option value='Admin'>Admin</option>
                                 <option value='Storage'>Storage</option>
                                 <option value='User'>User</option>
@@ -153,23 +158,33 @@ const UserItem = observer(({columns, rows, actions}) => {
                         <td>
                             {isEditMode && rowIDToEdit === row.id
                                 ?
-                                <button onClick={() => saveRowChanges()} className='custom-table__action-btn'
-                                        disabled={!editedRow}>
-                                    <Save/>
+                                <button
+                                    onClick={() => saveRowChanges()}
+                                    className={cl.custom_table__action_btn}
+                                    disabled={!editedRow}>
+                                    <Save style={{width: 30}}/>
                                 </button>
-                                : <button onClick={() => editRow(row.id)} className='custom-table__action-btn'>
-                                    <PencilFill/>
+                                : <button
+                                    onClick={() => editRow(row.id)}
+                                    className={cl.custom_table__action_btn}
+                                >
+                                    <PencilFill style={{width: 30}}/>
                                 </button>
                             }
 
                             {isEditMode && rowIDToEdit === row.id
                                 ?
-                                <button onClick={() => stopEdit()} className='custom-table__action-btn'>
-                                    <XSquare/>
+                                <button
+                                    onClick={() => stopEdit()}
+                                    className={cl.custom_table__action_btn}
+                                >
+                                    <XSquare style={{width: 30}}/>
                                 </button>
-                                : <button onClick={() => removeRow(row.id)}
-                                          className='custom-table__action-btn'>
-                                    <Trash/>
+                                : <button
+                                    onClick={() => removeRow(row.id)}
+                                    className={cl.custom_table__action_btn}
+                                >
+                                    <Trash style={{width: 30}}/>
                                 </button>
                             }
                         </td>

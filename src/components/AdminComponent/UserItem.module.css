@@ -1,0 +1,79 @@
+/*table td {*/
+/*    width: 200px;*/
+/*    height: 20px;*/
+/*    vertical-align: middle;*/
+/*    align-items: center;*/
+/*    border: 1px #5c5c5c;*/
+/*}*/
+
+.content__admin_list{
+
+}
+
+.custom_table__action_btn {
+    cursor: pointer;
+    border: 1px solid #eee;
+    background: none;
+    margin-right: 5px;
+}
+
+.custom_table__action_btn svg {
+    pointer-events: none;
+    padding: 5px;
+    width: 1.7em;
+    height: 1.7em;
+}
+
+.input_item {
+    width: 100px;
+    height: 20px;
+}
+
+.input_item_grade {
+    width: 30px;
+    height: 30px;
+}
+
+.input_item_email {
+    width: 200px;
+    height: 30px;
+}
+
+.input_item_role {
+    width: 180px;
+    height: 30px;
+}
+
+.tr__table{
+    width: 900px;
+
+}
+
+.td__id {
+    width: 30px;
+}
+
+.td__item {
+    height: 30px;
+    width: 90px;
+}
+
+.td__grade {
+    height: 30px;
+    width: 30px;
+}
+
+.td__email {
+    height: 30px;
+    width: 200px;
+}
+
+.td__role {
+    height: 30px;
+    width: 150px;
+}
+
+.td__btn {
+    height: 30px;
+    width: 50px;
+}
