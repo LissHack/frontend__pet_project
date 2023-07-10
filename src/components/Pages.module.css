@@ -13,13 +13,15 @@
     text-decoration: none;
     width: 30px;
     height: 30px;
-    border: 2px solid teal;
+    border: none;
+    background-color: #dedede;
     margin-right: 5px;
     border-radius: 3px;
-    background: white;
+    /*background: white;*/
 }
 
 .pagination__btn:hover {
-    color: white;
-    background-color: teal;
+    color: #5c5c5c;
+    background-color: white;
+
 }

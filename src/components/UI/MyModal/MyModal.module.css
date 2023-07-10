@@ -50,7 +50,6 @@
     background: white;
     border-radius: 40px;
     min-width: 250px;
-
 }
 
 .modal__btn {
@@ -113,6 +112,7 @@
 .modal__dropdown_content a:hover {
     background-color: #f1f1f1;
     border: 2px solid #62D9D9;
+    border-radius: 5px;
 }
 
 .modal__dropdown:hover .modal__dropdown_content {

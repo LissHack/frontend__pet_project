@@ -6,6 +6,7 @@ import DevicesPage from "./DevicesPage";
 import cl from './StoragePage.module.css'
 import NavbarStorage from "../components/UI/Navbar/NavbarStorage";
 
+
 const StoragePage = observer(() => {
 
     return (
@@ -19,15 +20,9 @@ const StoragePage = observer(() => {
                 <div className={cl.menu__stor_page}>
                     <MenuList/>
                 </div>
-                <form className={cl.form__stor_page}>
-                    <div className={cl.form__menu}>
-                        {/*<StorageMenu/>*/}
-                        <DevicesPage/>
-                    </div>
-                    {/*<div className={cl.form__device}>*/}
-                    {/*    <DevicesPage/>*/}
-                    {/*</div>*/}
-                </form>
+                <div className={cl.form__menu}>
+                    <DevicesPage/>
+                </div>
             </div>
         </div>
 
