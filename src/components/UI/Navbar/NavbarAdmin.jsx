@@ -22,9 +22,9 @@ const NavbarAdmin = observer(() => {
         <div className={cl.navbar}>
             {user.isAuth ?
                 <Nav>
-                    <MyButton onClick={() => navigate(ADMIN_ROUTE)}>
-                        Админ панель
-                    </MyButton>
+                    {/*<MyButton onClick={() => navigate(ADMIN_ROUTE)}>*/}
+                    {/*    Админ панель*/}
+                    {/*</MyButton>*/}
                     <MyButton onClick={() => logOut()}>
                         Выйти
                     < /MyButton>

@@ -1,10 +1,8 @@
 import React, {useContext, useEffect} from 'react';
 import NavbarAdmin from "../components/UI/Navbar/NavbarAdmin";
-import {Card, Container} from "react-bootstrap";
-import Form from "react-bootstrap/Form";
 import AdminMenu from "../components/AdminComponent/AdminMenu";
 import DepartmentBar from "../components/AdminComponent/DepartmentBar";
-import cl from "./DevicePage/DevicePage.module.css";
+import cl from "./StoragePage.module.css";
 import UserList from "../components/AdminComponent/UserList";
 import {observer} from "mobx-react-lite";
 import {Context} from "../index";
@@ -21,25 +19,29 @@ const Admin = observer(() => {
         })
     }, [])
 
-    useEffect(()=>{
-        fetchUsers(user.selectedJob.id, user.selectedDepartment.id).then(data=>{
+    useEffect(() => {
+        fetchUsers(user.selectedJob.id, user.selectedDepartment.id).then(data => {
             user.setUsers(data.rows)
         })
     }, [user.selectedJob, user.selectedDepartment])
 
     return (
-        <Container>
-            <NavbarAdmin/>
-            <AdminMenu/>
-            <Form className={cl.container__device_page}>
-                <Card>
+        <div className={cl.container__stor_page}>
+
+            <div className={cl.content__stor_page}>
+                <div className={cl.storage__navbar}>
+                    <AdminMenu/>
+                    <NavbarAdmin/>
+                </div>
+                <hr className={cl.hr}/>
+                <div className={cl.menu__stor_page}>
                     <DepartmentBar/>
-                </Card>
-                <Card>
+                </div>
+                <div className={cl.form__menu}>
                     <UserList/>
-                </Card>
-            </Form>
-        </Container>
+                </div>
+            </div>
+        </div>
     );
 });
 

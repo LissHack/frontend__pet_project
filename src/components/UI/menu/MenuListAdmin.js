@@ -1,8 +1,8 @@
 import React from 'react';
-import cl from './MenuList.module.css'
+import cl from "./MenuList.module.css";
 
-const MenuList = () => {
-    const [startAnimate, setStartAnimate] = React.useState(false);
+const MenuListAdmin = () => {
+   const [startAnimate, setStartAnimate] = React.useState(false);
     const [highlightTopPosition, setStateHighlightTopPosition] = React.useState(0);
     const [currCount, setCurrCount] = React.useState(0);
 
@@ -36,7 +36,7 @@ const MenuList = () => {
                 ></div>
                 <a
                     className={currCount === 0 && cl.active}
-                    href="#"
+                    href="/storage"
                     onClick={() => onClickTab(0)}
                 >
           <span className={currCount === 0 && 'cl.text-active'}>
@@ -58,30 +58,13 @@ const MenuList = () => {
                     onClick={() => onClickTab(2)}
                 >
           <span className={currCount === 2 && 'cl.text-active'}>
-            <i className="fas fa-arrow-right"></i> Заказ
+            <i className="fas fa-arrow-right"></i> Пользователи
           </span>
                 </a>
-                <a
-                    className={currCount === 3 && cl.active}
-                    href="#"
-                    onClick={() => onClickTab(3)}
-                >
-          <span className={currCount === 3 && 'cl.text-active'}>
-            <i className="fas fa-arrow-right"></i> Заказы
-          </span>
-                </a>
-                <a
-                    className={currCount === 4 && cl.active}
-                    href="#"
-                    onClick={() => onClickTab(4)}
-                >
-          <span className={currCount === 4 && 'cl.text-active'}>
-            <i className="fas fa-arrow-right"></i> Чат
-          </span>
-                </a>
+
             </div>
         </div>
     );
 };
 
-export default MenuList;
+export default MenuListAdmin;

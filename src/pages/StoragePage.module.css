@@ -8,6 +8,14 @@
     background-color: #eae9e9;
 }
 
+.container__order_page {
+    margin: 0;
+    padding: 0;
+}
+
+.content__order_page {
+    background-color: #eae9e9;
+}
 
 .menu__stor_page {
     display: flex;
@@ -30,7 +38,7 @@
 
 }
 
-.navbar {
+.storage__navbar {
     display: flex;
     background-color: #ffffff;
     height: 70px;

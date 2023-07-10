@@ -2,8 +2,7 @@ import React, {useContext} from 'react';
 import {Context} from "../../../index";
 import {useNavigate} from "react-router-dom";
 import cl from './Navbar.module.css'
-import {LOGIN_ROUTE, ORDER_ROUTE, STORAGE_ROUTE} from "../../../utils/consts";
-
+import {LOGIN_ROUTE, STORAGE_ROUTE} from "../../../utils/consts";
 import MyButton from "../MyButton/MyButton";
 import {observer} from "mobx-react-lite";
 
@@ -17,7 +16,6 @@ const NavbarStorage = observer(() => {
         localStorage.removeItem('token')
     }
 
-
     return (
         <div className={cl.navbar}>
             {user.isAuth ?
@@ -27,11 +25,6 @@ const NavbarStorage = observer(() => {
                         onClick={() => navigate(STORAGE_ROUTE)}>
                         Назад
                     </MyButton>
-                    {/*<MyButton*/}
-                    {/*    className={cl.navbar_btn}*/}
-                    {/*    onClick={() => navigate(ORDER_ROUTE)}>*/}
-                    {/*    Заказы*/}
-                    {/*</MyButton>*/}
                     <MyButton
                         className={cl.navbar_btn}
                         onClick={() => logOut()}
