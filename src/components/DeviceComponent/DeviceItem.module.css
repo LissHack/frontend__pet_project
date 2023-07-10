@@ -7,7 +7,7 @@
     margin-right: 20px;
     padding-top: 20px;
     border-radius: 20px;
-    background-color: #1fffe5;
+    background-color: #90ffff;
 }
 
 .card_name {
@@ -44,10 +44,10 @@
     height: 550px;
     width: 90%;
     padding: 20px 20px;
-    margin: 30px;
+    margin: 10px 40px;
     border-radius: 30px;
     background-color: white;
-    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     -webkit-backdrop-filter: blur(8px);
     backdrop-filter: blur(80px);
 }
