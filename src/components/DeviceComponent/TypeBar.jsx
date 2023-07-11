@@ -1,8 +1,8 @@
 import React, {useContext, useEffect} from 'react';
 import {observer} from "mobx-react-lite";
 import {Context} from "../../index";
-import {Dropdown} from "react-bootstrap";
 import cl from "./BrandBar.module.css";
+import {Dropdown} from "react-bootstrap";
 import {fetchTypes} from "../../http/deviceAPI";
 import Form from "react-bootstrap/Form";
 
@@ -17,7 +17,7 @@ const TypeBar = observer(() => {
         <Form>
             <Dropdown className={cl.dropdown}>
                 <Dropdown.Toggle className={cl.dropdown_btn}>
-                    ТИП
+                    {device.selectedType.name || 'ТИП'}
                 </Dropdown.Toggle>
                 <Dropdown.Menu className={cl.dropdown_content}>
                     {device.types.map(type =>

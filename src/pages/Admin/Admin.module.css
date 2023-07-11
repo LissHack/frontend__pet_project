@@ -1,0 +1,44 @@
+#root {
+    margin: 0;
+    padding: 0;
+}
+
+.container__admin_page {
+    margin: 0;
+    padding: 0;
+}
+
+.content__admin_page {
+    background-color: #eae9e9;
+    /*width: 1000px;*/
+    height: 750px;
+}
+
+.admin__navbar {
+    display: flex;
+    background-color: #ffffff;
+    height: 70px;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 10px;
+}
+
+.hr {
+    margin: 0;
+    display: flex;
+    /*margin-top: 10px;*/
+    width: 100%;
+    border: solid 1px;
+    color: #dedede;
+}
+
+.menu__admin_page {
+    display: flex;
+    padding-left: 0;
+}
+
+.form__user_list {
+    display: flex;
+    margin-left: 180px;
+}

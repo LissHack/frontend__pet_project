@@ -1,9 +1,8 @@
 import React, {useState} from 'react';
-import {Container} from "react-bootstrap";
-import MyButton from "../UI/MyButton/MyButton";
 import CreateDepartment from "../UI/MyModal/MyModalAdmin/CreateDepartment";
 import CreateJob from "../UI/MyModal/MyModalAdmin/CreateJob";
 import CreateUser from "../UI/MyModal/MyModalAdmin/CreateUser";
+import cl from "../DeviceComponent/BrandBar.module.css";
 
 
 const AdminMenu = () => {
@@ -13,28 +12,34 @@ const AdminMenu = () => {
 
 
     return (
-        <Container>
-            <div style={{display: 'flex', padding: '20px 20px'}}>
-                <MyButton
+        <div className={cl.nav}>
+            <input type="checkbox"/>
+            <span></span>
+            <span></span>
+            <div className={cl.menu}>
+                <button
+                    className={cl.link}
                     onClick={() => setDepVisible(true)}
                 >
                     Добавить отдел
-                </MyButton>
-                <MyButton
+                </button>
+                <button
+                    className={cl.link}
                     onClick={() => setPositionVisible(true)}
                 >
                     Добавить должность
-                </MyButton>
-                <MyButton
+                </button>
+                <button
+                    className={cl.link}
                     onClick={() => setUserVisible(true)}
                 >
                     Добавить работника
-                </MyButton>
+                </button>
             </div>
             <CreateDepartment show={depVisible} onHide={() => setDepVisible(false)}/>
             <CreateJob show={positionVisible} onHide={() => setPositionVisible(false)}/>
             <CreateUser show={userVisible} onHide={() => setUserVisible(false)}/>
-        </Container>
+        </div>
     );
 };
 

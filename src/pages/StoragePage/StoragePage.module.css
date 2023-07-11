@@ -8,10 +8,19 @@
     background-color: #eae9e9;
 }
 
+.container__order_page {
+    margin: 0;
+    padding: 0;
+}
+
+.content__order_page {
+    background-color: #eae9e9;
+}
 
 .menu__stor_page {
     display: flex;
     padding-left: 0;
+    width: 1500px;
 }
 
 .form__stor_page {
@@ -21,19 +30,23 @@
 }
 
 .form__menu {
+    display: flex;
+    justify-content: center;
     padding: 30px 50px;
-    /*float: left;*/
-    margin-left: 180px;
+    /* float: left; */
+    /*margin-left: 150px;*/
+    /*margin-left: 130px;*/
+    align-items: center;
 }
 
 .form__device {
 
 }
 
-.navbar {
+.storage__navbar {
     display: flex;
     background-color: #ffffff;
-    height: 70px;
+    height: 80px;
     width: 100%;
     justify-content: flex-end;
     align-items: center;

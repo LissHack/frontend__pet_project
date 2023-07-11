@@ -1,0 +1,26 @@
+table td {
+    width: 200px;
+    height: 20px;
+    vertical-align: middle;
+    align-items: center;
+    border: 1px #5c5c5c;
+}
+
+
+.content__admin_list {
+
+}
+
+.custom_table__action_btn {
+    cursor: pointer;
+    border: 1px solid #eee;
+    background: none;
+    margin-right: 5px;
+}
+
+.custom_table__action_btn svg {
+    pointer-events: none;
+    padding: 5px;
+    width: 1.7em;
+    height: 1.7em;
+}

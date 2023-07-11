@@ -1,10 +1,10 @@
 import React, {useContext, useEffect} from 'react';
 import cl from "./BrandBar.module.css";
 import {Context} from "../../index";
-import {Dropdown} from "react-bootstrap";
+import {Dropdown, Form} from "react-bootstrap";
 import {fetchConditions} from "../../http/deviceAPI";
 import {observer} from "mobx-react-lite";
-import Form from "react-bootstrap/Form";
+
 
 const ConditionBar = observer(() => {
     const {device} = useContext(Context)
@@ -18,13 +18,14 @@ const ConditionBar = observer(() => {
         <Form>
             <Dropdown className={cl.dropdown}>
                 <Dropdown.Toggle className={cl.dropdown_btn}>
-                    СОСТОЯНИЕ
+                    {device.selectedCondition.name || 'СОСТОЯНИЕ'}
                 </Dropdown.Toggle>
                 <Dropdown.Menu className={cl.dropdown_content}>
                     {device.conditions.map(condition =>
-                        <Dropdown.Item className={cl.dropdown__condition}
-                                       key={condition.id}
-                                       onClick={() => device.setSelectedCondition(condition)}
+                        <Dropdown.Item
+                            className={cl.dropdown__condition}
+                            key={condition.id}
+                            onClick={() => device.setSelectedCondition(condition)}
                         >
                             {condition.name}
                         </Dropdown.Item>

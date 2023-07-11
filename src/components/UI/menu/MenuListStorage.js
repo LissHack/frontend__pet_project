@@ -1,10 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
 import cl from './MenuList.module.css'
+import {observer} from "mobx-react-lite";
 
-const MenuList = () => {
-    const [startAnimate, setStartAnimate] = React.useState(false);
-    const [highlightTopPosition, setStateHighlightTopPosition] = React.useState(0);
-    const [currCount, setCurrCount] = React.useState(0);
+
+const MenuListStorage = observer(() => {
+    const [startAnimate, setStartAnimate] = useState(false)
+    const [highlightTopPosition, setStateHighlightTopPosition] = useState(0)
+    const [currCount, setCurrCount] = useState(0)
 
     const onClickTab = (count) => {
         setStartAnimate(false);
@@ -36,7 +38,7 @@ const MenuList = () => {
                 ></div>
                 <a
                     className={currCount === 0 && cl.active}
-                    href="#"
+                    href="/storage"
                     onClick={() => onClickTab(0)}
                 >
           <span className={currCount === 0 && 'cl.text-active'}>
@@ -82,6 +84,6 @@ const MenuList = () => {
             </div>
         </div>
     );
-};
+});
 
-export default MenuList;
+export default MenuListStorage;
