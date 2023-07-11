@@ -1,7 +1,6 @@
 import React, {useContext} from 'react';
 import {Context} from "../../index";
 import cl from "./UserItem.module.css";
-import 'bootstrap/dist/css/bootstrap.min.css';
 import UserItem from "./UserItem";
 
 const UserList = () => {

@@ -2,9 +2,10 @@
     margin: 0;
     padding: 0;
 }
+
 .container__admin_page {
-    /*margin: 0;*/
-    /*padding: 0;*/
+    margin: 0;
+    padding: 0;
 }
 
 .content__admin_page {
@@ -24,6 +25,7 @@
 }
 
 .hr {
+    margin: 0;
     display: flex;
     /*margin-top: 10px;*/
     width: 100%;

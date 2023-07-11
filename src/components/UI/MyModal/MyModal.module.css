@@ -53,8 +53,10 @@
 }
 
 .modal__btn {
+    border: none;
     padding-top: 10px;
-    display: flex;
+    /*width: 150px;*/
+    display: inline-block;
 }
 
 .modal__input {
@@ -125,7 +127,7 @@
 }
 
 .modal__footer_btn {
-    display: flex;
+    /*display: flex;*/
     padding-top: 8px;
     align-items: center;
 }

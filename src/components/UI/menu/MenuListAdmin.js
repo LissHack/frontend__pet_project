@@ -37,7 +37,7 @@ const MenuListAdmin = observer(() => {
                 ></div>
                 <a
                     className={currCount === 0 && cl.active}
-                    href="/Admin/Admin"
+                    href="/admin/"
                     onClick={() => onClickTab(0)}
                 >
           <span className={currCount === 0 && 'cl.text-active'}>

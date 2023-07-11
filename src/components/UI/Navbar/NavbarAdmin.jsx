@@ -2,7 +2,7 @@ import React, {useContext} from 'react';
 import {Context} from "../../../index";
 import {useNavigate} from "react-router-dom";
 import cl from './Navbar.module.css'
-import {ADMIN_ROUTE, LOGIN_ROUTE} from "../../../utils/consts";
+import {LOGIN_ROUTE} from "../../../utils/consts";
 import {Nav} from "react-bootstrap";
 import MyButton from "../MyButton/MyButton";
 import {observer} from "mobx-react-lite";
@@ -22,9 +22,6 @@ const NavbarAdmin = observer(() => {
         <div className={cl.navbar}>
             {user.isAuth ?
                 <Nav>
-                    {/*<MyButton onClick={() => navigate(ADMIN_ROUTE)}>*/}
-                    {/*    Админ панель*/}
-                    {/*</MyButton>*/}
                     <MyButton onClick={() => logOut()}>
                         Выйти
                     < /MyButton>

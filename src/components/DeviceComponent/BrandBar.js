@@ -17,7 +17,7 @@ const BrandBar = observer(() => {
         <Form>
             <Dropdown className={cl.dropdown}>
                 <Dropdown.Toggle className={cl.dropdown_btn}>
-                    БРЕНД
+                    {device.selectedBrand.name || 'БРЕНД'}
                 </Dropdown.Toggle>
                 <Dropdown.Menu className={cl.dropdown_content}>
                     {device.brands.map(brand =>

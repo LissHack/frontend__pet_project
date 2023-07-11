@@ -18,13 +18,14 @@ const ConditionBar = observer(() => {
         <Form>
             <Dropdown className={cl.dropdown}>
                 <Dropdown.Toggle className={cl.dropdown_btn}>
-                    СОСТОЯНИЕ
+                    {device.selectedCondition.name || 'СОСТОЯНИЕ'}
                 </Dropdown.Toggle>
                 <Dropdown.Menu className={cl.dropdown_content}>
                     {device.conditions.map(condition =>
-                        <Dropdown.Item className={cl.dropdown__condition}
-                                       key={condition.id}
-                                       onClick={() => device.setSelectedCondition(condition)}
+                        <Dropdown.Item
+                            className={cl.dropdown__condition}
+                            key={condition.id}
+                            onClick={() => device.setSelectedCondition(condition)}
                         >
                             {condition.name}
                         </Dropdown.Item>

@@ -4,6 +4,7 @@ import {observer} from "mobx-react-lite";
 import {PencilFill, Save, Trash, XSquare} from "react-bootstrap-icons";
 import {Context} from "../../index";
 import cl from './UserItem.module.css'
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const UserItem = observer(({columns, rows, actions}) => {
