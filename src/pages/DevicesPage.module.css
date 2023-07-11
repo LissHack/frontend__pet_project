@@ -8,12 +8,17 @@
 .container__device_page {
     width: 100%;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 
 .card__bar {
-    display: flex;
+    /*display: flex;*/
     padding-bottom: 20px;
+
     align-items: center;
     justify-content: center;
 }
@@ -21,7 +26,7 @@
 .card__btn {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     background: #dedede;
     border-radius: 20px;
     width: 500px;
@@ -29,7 +34,7 @@
 }
 
 .card__devices {
-/*display: flex;*/
+    /*display: flex;*/
 }
 
 .card__items {
