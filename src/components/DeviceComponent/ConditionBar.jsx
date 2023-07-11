@@ -1,10 +1,10 @@
 import React, {useContext, useEffect} from 'react';
 import cl from "./BrandBar.module.css";
 import {Context} from "../../index";
-import {Dropdown} from "react-bootstrap";
+import {Dropdown, Form} from "react-bootstrap";
 import {fetchConditions} from "../../http/deviceAPI";
 import {observer} from "mobx-react-lite";
-import Form from "react-bootstrap/Form";
+
 
 const ConditionBar = observer(() => {
     const {device} = useContext(Context)
