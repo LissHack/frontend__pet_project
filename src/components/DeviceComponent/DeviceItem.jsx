@@ -21,6 +21,7 @@ const DeviceItem = ({device}) => {
                 </div>
                 <div>{device.state_at}</div>
             </form>
+            <button className={cl.card__btn}>купить</button>
         </div>
 
     );
