@@ -21,9 +21,13 @@ const DeviceItem = ({device}) => {
                 </div>
                 <div>{device.state_at}</div>
             </form>
-            <button className={cl.card__btn}>купить</button>
+            <div className={cl.card__btn_item}>
+                <button className={cl.btn_buy}>
+                    <svg src="src/assets/buy.png"/>
+                </button>
+                <button className={cl.btn_desc}>характеристики</button>
+            </div>
         </div>
-
     );
 };
 

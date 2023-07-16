@@ -1,6 +1,6 @@
 .content__device_list {
-    height: 200px;
-    width: 200px;
+    height: 230px;
+    width: 230px;
     display: inline-grid;
     justify-content: center;
     flex-wrap: wrap;
@@ -19,13 +19,37 @@
     padding: 5px;
 }
 
-.card__btn{
+.card__btn_item {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.btn_buy {
     width: 50px;
-    height: 25px;
+    height: 35px;
+    border-radius: 45px;
+    /*background-color: white;*/
+    border: none;
+    background-image: image('src/assets/buy.png') ;
+
+}
+
+.btn_desc {
+    width: 50px;
+    height: 35px;
     border-radius: 45px;
     background-color: white;
     border: none;
 }
+
+/*.card__btn{*/
+/*    width: 50px;*/
+/*    height: 35px;*/
+/*    border-radius: 45px;*/
+/*    background-color: white;*/
+/*    border: none;*/
+/*}*/
 
 .card__device_list {
     width: 80%;
