@@ -4,7 +4,7 @@ import {observer} from "mobx-react-lite";
 import {Context} from "../index";
 import {getOrder} from "../http/deviceAPI";
 import cl from "./StoragePage/StoragePage.module.css";
-import MenuListStorage from "../components/UI/menu/MenuListStorage";
+import MenuListStorage from "../components/menu/MenuListStorage";
 
 const OrderPage = observer(() => {
     const {device} = useContext(Context)

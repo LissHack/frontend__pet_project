@@ -6,7 +6,7 @@ import UserList from "../../components/AdminComponent/UserList";
 import {observer} from "mobx-react-lite";
 import {Context} from "../../index";
 import {fetchDepartments, fetchJobs, fetchUsers} from "../../http/adminApi";
-import MenuListAdmin from "../../components/UI/menu/MenuListAdmin";
+import MenuListAdmin from "../../components/menu/MenuListAdmin";
 
 const Admin = observer(() => {
     const {user} = useContext(Context)

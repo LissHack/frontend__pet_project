@@ -1,25 +1,26 @@
 import React, {useState} from 'react';
-import cl from "./MenuList.module.css";
+import cl from './MenuList.module.css'
 import {observer} from "mobx-react-lite";
 
-const MenuListAdmin = observer(() => {
-    const [useAnimate, setUseAnimate] = useState(false);
-    const [highlightTopPosition, setStateHighlightTopPosition] = useState(0);
-    const [currCount, setCurrCount] = useState(0);
+
+const MenuListStorage = observer(() => {
+    const [startAnimate, setStartAnimate] = useState(false)
+    const [highlightTopPosition, setStateHighlightTopPosition] = useState(0)
+    const [currCount, setCurrCount] = useState(0)
 
     const onClickTab = (count) => {
-        setUseAnimate(false);
+        setStartAnimate(false);
         setCurrCount(count);
         setStateHighlightTopPosition(count * 52);
 
         setTimeout(() => {
-            setUseAnimate(true);
+            setStartAnimate(true);
         }, 100);
     };
 
     React.useEffect(() => {
         setTimeout(() => {
-            setUseAnimate(true);
+            setStartAnimate(true);
         }, 500);
 
         return () => {
@@ -32,12 +33,12 @@ const MenuListAdmin = observer(() => {
                 <div
                     style={{top: `${highlightTopPosition}px`}}
                     className={`cl.sidebar__highlight ${
-                        useAnimate && "cl.sidebar__highlight__animate"
+                        startAnimate && "cl.sidebar__highlight__animate"
                     }`}
                 ></div>
                 <a
                     className={currCount === 0 && cl.active}
-                    href="/admin/"
+                    href="/storage"
                     onClick={() => onClickTab(0)}
                 >
           <span className={currCount === 0 && 'cl.text-active'}>
@@ -46,7 +47,7 @@ const MenuListAdmin = observer(() => {
                 </a>
                 <a
                     className={currCount === 1 && cl.active}
-                    href="#"
+                    href="src/components/menu#"
                     onClick={() => onClickTab(1)}
                 >
           <span className={currCount === 1 && 'cl.text-active'}>
@@ -55,17 +56,34 @@ const MenuListAdmin = observer(() => {
                 </a>
                 <a
                     className={currCount === 2 && cl.active}
-                    href="#"
+                    href="/order/"
                     onClick={() => onClickTab(2)}
                 >
           <span className={currCount === 2 && 'cl.text-active'}>
-            <i className="fas fa-arrow-right"></i> Пользователи
+            <i className="fas fa-arrow-right"></i> Заказ
           </span>
                 </a>
-
+                <a
+                    className={currCount === 3 && cl.active}
+                    href="src/components/menu#"
+                    onClick={() => onClickTab(3)}
+                >
+          <span className={currCount === 3 && 'cl.text-active'}>
+            <i className="fas fa-arrow-right"></i> Заказы
+          </span>
+                </a>
+                <a
+                    className={currCount === 4 && cl.active}
+                    href="src/components/menu#"
+                    onClick={() => onClickTab(4)}
+                >
+          <span className={currCount === 4 && 'cl.text-active'}>
+            <i className="fas fa-arrow-right"></i> Чат
+          </span>
+                </a>
             </div>
         </div>
     );
 });
 
-export default MenuListAdmin;
+export default MenuListStorage;

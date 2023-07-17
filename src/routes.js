@@ -56,4 +56,8 @@ export const userRouters = [
         path: REQUEST_ROUTE,
         Component: RequestPage
     },
+    {
+        path: DEVICE_ROUTE ,
+        Component: DevicePage
+    },
 ]

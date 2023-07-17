@@ -23,7 +23,7 @@ const DeviceItem = ({device}) => {
             </form>
             <div className={cl.card__btn_item}>
                 <button className={cl.btn_buy}>
-                    <svg src="src/assets/buy.png"/>
+                    <img src={buy} alt='buy'/>
                 </button>
                 <button className={cl.btn_desc}>характеристики</button>
             </div>

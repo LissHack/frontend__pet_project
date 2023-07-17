@@ -7,7 +7,7 @@ import {Nav} from "react-bootstrap";
 import MyButton from "../MyButton/MyButton";
 import {observer} from "mobx-react-lite";
 
-const NavbarAdmin = observer(() => {
+const NavbarUser = observer(() => {
     const {user} = useContext(Context)
     const navigate = useNavigate()
 
@@ -41,4 +41,4 @@ const NavbarAdmin = observer(() => {
     );
 });
 
-export default NavbarAdmin;
+export default NavbarUser;
